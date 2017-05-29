@@ -1,0 +1,123 @@
+
+/* blog comments */
+ul.comments {
+	padding-bottom: 3em;
+}
+
+.comment {
+	$comment-gutter: 1.5em;
+	$comment-image-padding: 0;
+	$comment-image-width: 5em;
+	$comment-color: $base-font-color;
+	$comment-background: lighten($base-accent-color, 15);
+	$comment-detail-color: transparentize($comment-color, .5);
+	$comment-image-vert-alignment: top;
+
+	display: block;
+	width: 100%;
+	margin-bottom: 0;
+	padding: 3em 0 0 0;
+	// border-bottom: 1px solid transparentize($comment-color, .9);
+
+	.children {
+		padding-left: 3em;
+
+		@include media($medium-screen-down) {
+			padding-left: 1em;
+		}
+	}
+
+	.comment-image,
+	.comment-content {
+		display: table-cell;
+		vertical-align: $comment-image-vert-alignment;
+	}
+
+	.comment-image {
+    	padding-right: $comment-gutter;
+
+	    > img {
+			width: $comment-image-width;
+			height: auto;
+			border-radius: $base-border-radius;
+			padding: $comment-image-padding;
+			background: $comment-background;
+			display: block;
+			max-width: none;
+	    }
+
+	    .comment-reverse-order & {
+			padding-right: 0;
+			padding-left: 10px;
+	    }
+	}
+
+	.comment-content {
+	    width: 100%;
+
+	    h2 {
+	      	font-size: 1.1em;
+	      	margin-bottom: .5em;
+
+	      	a {
+	      		color: lighten(black, 40%);
+	      	}
+	    }
+
+	    p {
+	      	margin-bottom: .5em;
+	    }
+
+	    p.comment-detail {
+			font-style: italic;
+			font-size: .9em;
+			color: $comment-detail-color;
+	    }
+  	}
+}
+
+/* the comment form */
+#comment-form .form {
+	@include clearfix;
+
+	.form-left,
+	.form-right {
+		@include span-columns(6);
+
+		@include media($large-screen-down) {
+			@include span-columns(8);	
+			@include pad(0 5%);
+		}	
+	}
+
+	label {
+		display: none;
+	}
+
+	input {
+		height: 3em;
+		margin-bottom: 1em;
+		padding: 0 1em;
+	}
+
+	textarea {
+		padding: 1em;
+		height: 11em;
+	}
+}
+
+p.form-submit {
+	margin: 0 auto;
+	display: block;
+	margin-top: -1em;
+
+	input {
+		background: $highlight;
+		padding: 1em 2em;
+		text-transform: uppercase;
+
+		&:hover {
+			background: lighten($highlight, 5%);
+		}
+	}
+}

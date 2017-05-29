@@ -1,0 +1,540 @@
+/**
+ * RTL
+ * V 1.0
+ * Toan Nguyen
+ */
+/* ===================== 
+NEAT - TABLE OF CONTENTS 
+========================
+
+1. CSS RESET - MEYERWEB
+2. BOURBON BITTERS STYLES
+3. OWL CAROUSEL STYLES
+4. TEMPLATE GLOBAL STYLES
+5. HEADER
+6. INTRO SECTION
+7. FEATURES SECTION
+8. NEWSLETTER SECTION
+9. SHOWCASE SECTION
+10. QUOTE / TESTIMONIALS
+11. CONTACT SECTION
+12 .SIDEBAR
+13. FOOTER
+14. USER CUSTOMISATION
+
+===================== */
+
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/** HEADER **/
+    header.navigation.headroom .navigation-wrapper:before {
+      content: "";
+      display: table;
+      clear: both; }
+    header.navigation.headroom .navigation-wrapper:before {
+      content: "";
+      display: table;
+      clear: both;
+	}
+header.navigation.headroom .site-heading,
+  header.navigation.headroom .logo {
+    float: right;
+    padding-right: 1em;
+    padding-left: 2em;
+ }
+  header.navigation.headroom .navigation-menu-button {
+    float: left;
+    padding-left: 1em;
+  	padding-right: 0;
+}
+    @media screen and (min-width: 53.75em) {
+      header.navigation.headroom .nav {
+        margin-top: 1em;
+        float: left; } }
+  header.navigation.headroom ul li.nav-link {
+    padding-right: 2em;
+  	padding-left: 0;
+    text-align: left;
+  }
+    @media screen and (max-width: 75em) {
+      header.navigation.headroom ul li.nav-link {
+        padding-right: 0; } }
+    @media screen and (max-width: 53.75em) {
+      header.navigation.headroom ul li.nav-link {
+        padding-right: 0;
+        text-align: center;
+        border-bottom: solid 1px #e6e6e6; }
+	}
+      @media screen and (min-width: 53.75em) {
+        header.navigation.headroom ul li.nav-link a {
+          padding-left: 1em;
+          padding-right: 0;
+		}
+      }
+header.navigation li.more.nav-link {
+  padding-left: 0;
+}
+  @media screen and (min-width: 53.75em) {
+    header.navigation li.more.nav-link {
+      padding-left: 1em; padding-right: 0; }
+}
+  header.navigation li.more.nav-link a {
+    margin-left: 1em;
+  	margin-right: 0;
+}
+    @media screen and (max-width: 53.75em) {
+      header.navigation li.more.nav-link a {
+        margin-left: 0; }
+	}
+  header.navigation li.more.nav-link > a {
+    padding-left: 0.6em;
+  	padding-right: 0;
+}
+  header.navigation li.more.nav-link > a:after {
+  	content: none;
+}
+  header.navigation li.more.nav-link > a:before {
+    position: absolute;
+    top: auto;
+    left: -0.4em;
+    bottom: auto;
+    right: auto;
+    content: '\25BE';
+    color: #b3b3b3;
+}
+header.navigation li.more {
+  padding-left: 0;
+}
+  header.navigation li.more a {
+    padding-left: .8em;padding-right: 0; }
+  header.navigation li.more > a {
+    padding-left: 1.6em;
+  	padding-right: 0;
+}
+    @media screen and (min-width: 53.75em) {
+      header.navigation li.more > a {
+        margin-left: 1em; margin-right: 0; }
+    }
+    header.navigation li.more > a:before {
+      content: '›';
+      position: absolute;
+      left: 0.5em;
+      right: auto;
+  }
+  @media screen and (min-width: 53.75em) {
+    header.navigation li.more {
+      		padding-left: .8em;
+    		padding-right: 0;
+		}
+   }
+header.navigation ul.submenu {
+  padding-right: 0;
+  right: 0;
+}
+  @media screen and (min-width: 53.75em) {
+    header.navigation ul.submenu .submenu {
+	      right: 11.8em;
+	      top: 0;
+		}
+  }
+  header.navigation ul.submenu li {
+    padding-left: 0;
+}
+    @media screen and (max-width: 53.75em) {
+      header.navigation ul.submenu li {
+	        padding-right: 0;
+	        text-align: center;
+		}
+    }
+    header.navigation ul.submenu li a {
+      text-align: left;
+    }
+      @media screen and (min-width: 53.75em) {
+        header.navigation ul.submenu li a {
+          padding: 0;
+          text-align: center; } }
+      @media screen and (min-width: 53.75em) {
+        header.navigation ul.submenu li a {
+          padding-right: 1em;
+          padding-left: 0;
+          text-align: right;
+		} }
+/* ====================
+6. INTRO SECTION
+==================== */
+
+/* ====================
+7. FEATURES SECTION
+==================== */
+
+@media screen and (max-width: 53.75em) {
+    .features .feature-item {
+      float: right;
+      margin-left: 3.57866%;
+	}
+     .features .feature-item:last-child {
+       margin-left: 0; }
+     .features .feature-item:nth-child(2n) {
+       margin-left: 0; }
+     .features .feature-item:nth-child(2n+1) {
+       clear: right; }
+}
+  @media screen and (max-width: 30em) {
+    .features .feature-item {
+      float: right;
+      margin-left: 7.42297%;
+	}
+      .features .feature-item:last-child {
+        margin-left: 0; }
+      .features .feature-item:nth-child(2n) {
+        margin-left: 0; }
+      .features .feature-item:nth-child(2n+1) {
+        clear: left; }
+}
+
+/* ====================
+8. NEWSLETTER SECTION
+==================== */
+  .newsletter .nl-text
+   {
+	    float: right;
+	    margin-right: 2.35765%;
+	}
+	.newsletter .nl-form{
+		float: left;
+	 	margin-right: 2.35765%;
+	}
+    .newsletter .nl-text:last-child,
+    .newsletter .nl-form:last-child {
+      margin-left: 0; }
+    @media screen and (max-width: 53.75em) {
+      .newsletter .nl-text,
+      .newsletter .nl-form {
+        float: right;
+        margin-left: 3.57866%;
+        padding: 1em 0 0 5%; }
+        .newsletter .nl-text:last-child,
+        .newsletter .nl-form:last-child {
+          margin-left: 0;
+		}
+	}
+  .newsletter .nl-form input[type="email"] {
+	    float: right;
+		margin-right: 0;
+	    margin-left: 4.82916%;
+	}
+    .newsletter .nl-form input[type="email"]:last-child {
+      margin-left: 0; }
+  .newsletter .nl-form input[type="submit"] {
+	    float: right;
+	    margin-left: 4.82916%;
+	    margin-left: 0;
+	    border-radius: 0 0px 3px 3px;
+	}
+    .newsletter .nl-form input[type="submit"]:last-child {
+      margin-left: 0; }
+...................
+/* ====================
+9. SHOWCASE SECTION
+==================== */
+    .showcase .split .split-left,
+    .showcase .split .split-right {
+	      float: right;
+	      margin-left: 2.35765%;
+    }
+      .showcase .split .split-left:last-child,
+      .showcase .split .split-right:last-child {
+        margin-left: 0;
+	  }
+      @media screen and (max-width: 53.75em) {
+        .showcase .split .split-left,
+        .showcase .split .split-right {
+	          float: right;
+	          margin-left: 3.57866%;
+	          padding: 1em 0 0 3em;
+		}
+          .showcase .split .split-left:last-child,
+          .showcase .split .split-right:last-child {
+            margin-left: 0;}
+		}
+      @media screen and (max-width: 30em) {
+        .showcase .split .split-left,
+        .showcase .split .split-right {
+          float: right;
+          margin-left: 7.42297%; }
+          .showcase .split .split-left:last-child,
+          .showcase .split .split-right:last-child {
+            margin-left: 0; }
+	  }
+    .showcase .split .split-left.float-right {
+      float: left; }
+      @media screen and (min-width: 53.75em) {
+        .showcase .split .split-left.float-right.split-text {
+          padding-right: 1.5em; } }
+    .showcase .split .split-right.float-left {
+      float: right; }
+    .showcase .split .img {
+	      float: right;
+	      margin-left: 2.35765%;
+	}
+      .showcase .split .img:last-child {
+        margin-left: 0; }
+      .showcase .split .img:nth-child(5n) {
+        margin-left: 0; }
+      .showcase .split .img:nth-child(5n+1) {
+        clear: right; }
+
+/* ====================
+10. QUOTE / TESTIMONIALS
+==================== */
+  .quote blockquote {
+    padding-right: 0;}
+    @media screen and (max-width: 37.5em) {
+      .quote blockquote {
+	        padding: 0 0 0 10px;
+		}
+	}
+
+/* ====================
+11. BLOG SECTION
+==================== */
+  section.blog #blog-teasers .blog-item {
+    padding: 0 0 0 1em; }
+
+/* blog single page */
+  .blog-single article.article-column,
+  .blog-single .main-column {
+    float: right;
+    margin-left: 2.35765%;
+  	margin-right: 0;
+}
+    .blog-single article.article-column:last-child,
+    .blog-single .main-column:last-child {
+      margin-left: 0; }
+    @media screen and (max-width: 53.75em) {
+      .blog-single article.article-column,
+      .blog-single .main-column {
+        float: right;
+        margin-left: 3.57866%;}
+        .blog-single article.article-column:last-child,
+        .blog-single .main-column:last-child {
+          margin-left: 0; }
+	}
+    .blog-single article.article-column .title,
+    .blog-single .main-column .title {
+      text-align: right; }
+      .blog-single article.article-column .title hr.small,
+      .blog-single .main-column .title hr.small {
+        margin-right: 0; }
+      .blog-single article.article-column .post-tags h3,
+      .blog-single .main-column .post-tags h3 {
+	        float: right;
+	        padding-left: 1em;
+		}
+    .blog-single .main-column .blog-item .media {
+      float: right;
+      margin-left: 3.16844%;
+	}
+      .blog-single .main-column .blog-item .media:last-child {
+        margin-left: 0; }
+      @media screen and (max-width: 37.5em) {
+        .blog-single .main-column .blog-item .media {
+          float: right;
+          margin-left: 7.42297%;
+		}
+          .blog-single .main-column .blog-item .media:last-child {
+            margin-left: 0;
+		  }
+	  }
+      .blog-single .main-column .blog-item .media .blog-teaser {
+	        float: right;
+	        margin-left: 3.16844%;
+		}
+        @media screen and (max-width: 37.5em) {
+          .blog-single .main-column .blog-item .media .blog-teaser {
+	            float: right;
+	            margin-left: 7.42297%;
+			}
+            .blog-single .main-column .blog-item .media .blog-teaser:last-child {
+              margin-left: 0;
+			}
+		}
+  .blog-single aside.sidebar {
+	    float: left;
+	}
+    .blog-single aside.sidebar:last-child {
+      margin-left: 0;
+	}
+    @media screen and (max-width: 53.75em) {
+      .blog-single aside.sidebar {
+        float: right;
+        margin-left: 3.57866%;
+        padding: 2em  0  0 20%; }
+        .blog-single aside.sidebar:last-child {
+          margin-left: 0; }
+	}
+    @media screen and (max-width: 30em) {
+      .blog-single aside.sidebar {
+	        float: right;
+	        margin-left: 7.42297%;
+	        padding: 1em 0 0 3%;
+		}
+        .blog-single aside.sidebar:last-child {
+          margin-left: 0;
+		}
+	}
+        .blog-single aside.sidebar .widget-wrapper ul.blog-categories li:before {
+	          float: right;
+		}
+
+  .quote-format blockquote {
+	    border-right: 0;
+	}
+
+/* author box */
+  .author-box .author-avatar {
+    float: right; }
+  .author-box .author-bio {
+    margin-right: 6.5em; }
+
+/* archive pagination */
+    .pagination ul li a {
+      padding: .5em 0 0 1em;
+	}
+/* blog comments */
+  .comment.level-1 {
+    padding-right: 3em; }
+  .comment.level-2 {
+    padding-right: 6em; }
+  .comment .comment-image {
+    padding-left: 1.5em; }
+    .comment-reverse-order .comment .comment-image {
+      padding-left: 0;
+      padding-right: 10px; }
+
+/* the comment form */
+#comment-form .form .form-left,
+#comment-form .form .form-right {
+  float: right;
+  margin-left: 2.35765%;
+}
+  #comment-form .form .form-left:last-child,
+  #comment-form .form .form-right:last-child {
+    margin-left: 0; }
+  @media screen and (max-width: 53.75em) {
+    #comment-form .form .form-left,
+    #comment-form .form .form-right {
+      float: right;
+      margin-left: 3.57866%;
+	}
+      #comment-form .form .form-left:last-child,
+      #comment-form .form .form-right:last-child {
+        margin-left: 0; }
+}
+  p.submit input {
+    padding: 1em 0 0 2em;
+ }
+
+/* ====================
+12. CONTACT SECTION
+==================== */
+  .contact .form .form-left,
+  .contact .form .form-right {
+    float: right;
+   	margin-right: 0;
+    margin-left: 2.35765%;
+  }
+    .contact .form .form-left:last-child,
+    .contact .form .form-right:last-child {
+      margin-left: 0;
+	}
+    @media screen and (max-width: 53.75em) {
+      .contact .form .form-left,
+      .contact .form .form-right {
+	        float: right;
+	        margin-left: 3.57866%;
+	        padding: 0 0 0 5%;
+		}
+        .contact .form .form-left:last-child,
+        .contact .form .form-right:last-child {
+          margin-left: 0; }
+	}
+  .contact .form input {
+    padding: 0 0 0 1em;
+  }
+.contact .form-feedback {
+  padding: 1em 0 0 2em;
+}
+.contact #contact-error {
+  margin: 0 0 2em  20%;
+}
+  @media screen and (max-width: 37.5em) {
+    .contact #contact-error {
+      margin: 0 0 2em 5%; } }
+/* ====================
+SIDEBAR
+==================== */
+.blog-single aside.sidebar .widget-wrapper ul li:before{
+	content: none;
+}
+.blog-single aside.sidebar .widget-wrapper ul li:after{
+	content: '\f104';
+	font-family: 'Fontawesome';
+	float: right;
+}
+
+/* ====================
+13. FOOTER
+==================== */
+  footer.footer p.copyright {
+    float: right;
+    margin-left: 2.35765%;
+ }
+    @media screen and (max-width: 37.5em) {
+      footer.footer p.copyright {
+	        float: right;
+	        margin-left: 7.42297%;
+		}
+        footer.footer p.copyright:last-child {
+          margin-left: 0;
+		}
+	}
+    footer.footer p.copyright:last-child {
+      margin-left: 0; }
+  footer.footer ul.social {
+    float: right;
+    margin-left: 2.35765%;
+    float: left;
+    text-align: left;
+  }
+    @media screen and (max-width: 37.5em) {
+      footer.footer ul.social {
+	        float: right;
+	        margin-left: 7.42297%;
+		}
+        footer.footer ul.social:last-child {
+          margin-left: 0;
+		}
+	}
+    footer.footer ul.social:last-child {
+      margin-left: 0; }
+      footer.footer ul.social li a {
+        padding: 0 1.2em 0 0;
+	}
+
+/* ====================
+14. USER CUSTOMISATION 
+==================== */ 
+div.wpcf7-response-output{
+	text-align: right;
+}
+.posts-widget-tem .post-hover .img-hover{
+	height:95%;
+}
+.posts-widget-tem:after{
+	content:none!important;
+}

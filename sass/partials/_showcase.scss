@@ -1,0 +1,63 @@
+
+#section-showcase {
+	padding: 6em 0 5em;
+}
+
+.showcase {
+	padding: 1em 0 5em;
+
+	.split {
+		@include clearfix;
+		margin: 5em 0 0 0;
+
+		.split-left,
+		.split-right {
+			@include span-columns(6);
+			@include media($large-screen-down) {
+				@include span-columns(8);
+				@include pad(1em 3em);
+				text-align: center;
+				float: none !important;
+			}
+			@include media($small-screen-down) {
+				@include span-columns(4);
+				@include pad(10px);
+			}
+		}
+
+		.split-left.float-right {
+			float: right;
+
+			&.split-text {
+
+				@media screen and (min-width: 53.75em) {
+					padding-left: 1.5em;
+				}
+			}
+		}
+
+		.split-right.float-left {
+			float: left;
+		}
+
+		.split-media {
+
+			#showcase-slider .item img{
+			    display: block;
+			    width: 100%;
+			    height: auto;
+			    cursor: move;
+			}
+		}
+		
+		.img {
+			@include span-columns(3);
+			@include omega(5n);
+			margin-bottom: 1em;
+		}
+	}
+}
+
+.showcase.gray {
+	background: darken(white, 5%);
+}

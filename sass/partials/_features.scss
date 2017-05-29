@@ -1,0 +1,44 @@
+
+.features {
+
+	.feature-item {
+		@media screen and (min-width: 53.75em) {
+			@include span-columns(4);
+			@include omega(3n);	
+		}
+
+		@include media($large-screen-down) {
+			@include span-columns(4);
+			@include omega(2n);
+		}
+
+		@include media($small-screen-down) {
+			@include span-columns(4);
+			@include omega(2n);
+		}
+
+		padding: 3em 0 2em;
+		text-align: center;
+
+		h4 {
+			text-transform: uppercase;
+			font-size: 1.3em;
+			padding-bottom: .5em;
+		}
+
+		p {
+			color: darken(white, 50%);
+		}
+
+		i {
+			font-size: 4em;
+			color: darken(white, 20%);
+			margin-bottom: .3em;
+			transition: color .2s;
+		}
+
+		&:hover i {
+			color: $highlight;		
+		}
+	}
+}

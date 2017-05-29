@@ -1,0 +1,10 @@
+.social-counter span{
+    display:block;
+    padding-top: 5px;
+}
+.social-counter span i{
+    color: #0074a2
+}
+#setting-error-neat{
+	display: block;
+}

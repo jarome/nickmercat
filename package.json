@@ -1,0 +1,20 @@
+{
+  "name": "nickpercat",
+  "version": "1.0.0",
+  "description": "Changelogs. V1.0.5.1 Updated: JS Composer 4.5.1 Updated: TGM-Plugin-Activation 2.5 V1.0.3",
+  "main": "index.js",
+  "dependencies": {
+    "bourbon": "^4.3.4",
+    "gulp": "^3.9.1",
+    "neat": "^1.2.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,291 @@
+/* blog single page */
+.blog-single {
+	padding: 9em 0 3em;
+
+	article.article-column, 
+	.main-column {
+		@include span-columns(9);
+		@include media($large-screen-down) {
+			@include span-columns(8);
+		}
+
+		.title {
+			text-align: left;
+			margin-bottom: 0;
+
+			h2 {
+				padding-bottom: .4em;
+			}
+
+			hr.small {
+				margin-left: 0;
+			}
+		}
+
+		.meta {
+			font-size: .9em;
+			margin-bottom: 1em;
+			color: darken(white, 30%);
+			padding: .5em 0;
+			border-top: solid 3px darken(white, 5%);
+			border-bottom: solid 3px darken(white, 5%);
+		}
+
+		.post-intro {
+			text-transform: uppercase;
+			font-size: 1.4em;
+			color: darken(white, 30%);
+		}
+
+		.media {
+			margin-bottom: 2em;
+		}
+
+		.post-tags {
+			border-top: solid 4px darken(white, 5%);
+			border-bottom: solid 4px darken(white, 5%);
+			margin: 2em 0;
+			padding: 1em 0;
+
+			h3 {
+				float: left;
+				font-size: 1em;
+				padding-right: 1em;
+				padding-top: .6em;
+			}
+
+			span {	
+				margin-bottom: .2em;
+				display: inline-block;
+
+				a {
+					color: lighten(black, 40%);
+					background: darken(white, 5%);
+					display: block;
+					padding: .5em;
+					font-size: .9em;
+
+					&:hover {
+						background: darken(white, 10%);
+					}
+				} 
+			}
+		}
+	}
+
+	.main-column {
+
+		.blog-item {
+			@include clearfix;
+			margin-bottom: 1em;
+			@include media($medium-screen-down) {
+				margin-bottom: 2em;
+			}
+
+			.media {
+				@include span-columns(4 of 9);
+				@include media($medium-screen-down) {
+					@include span-columns(4);
+				}
+				transition: all 0.2s;
+
+				&:hover {
+					opacity: 0.9
+				}
+
+				.blog-teaser {
+					@include span-columns(5 of 9);
+					@include media($medium-screen-down) {
+						@include span-columns(4);
+					}
+
+					.post-title a {
+						color: lighten(black, 40%);
+					}
+
+					.meta {
+						margin-top: .8em;
+					}
+				}
+			}		
+		}
+	}
+
+	/* sidebar widgets */
+	aside.sidebar {
+		@include span-columns(3);
+		@include media($large-screen-down) {
+			@include span-columns(8);
+			@include pad(2em 20% 0);
+		}
+
+		@include media($small-screen-down) {
+			@include span-columns(4);
+			@include pad(1em 3% 0);
+		}
+
+		.widget-wrapper {
+			margin-bottom: 3em;
+
+			.widget-title {
+				padding-bottom: .5em;
+				margin-bottom: 1em;
+				border-bottom: solid 4px darken(white, 5%);
+			}
+
+			ul.blog-categories li {
+				border-bottom: solid 1px darken(white, 5%);
+
+				&:before {
+					content: '\f105';
+					font-family: 'Fontawesome';
+					float: left;
+					padding: .5em;
+				}
+				
+				&:hover {
+					background: darken(white, 3%);
+				} 
+
+				a {
+					color: lighten(black, 40%);
+					text-transform: uppercase;
+					display: block;
+					padding: .5em;
+				} 
+
+				&:hover {
+					color: lighten(black, 50%);
+				}
+			}
+
+			.blog-tags {
+
+				span {
+					
+					margin-bottom: .2em;
+					display: inline-block;
+
+					a {
+						color: lighten(black, 40%);
+						background: darken(white, 5%);
+						display: block;
+						padding: .5em;
+						font-size: .9em;
+
+						&:hover {
+							background: darken(white, 10%);
+						}
+					} 
+				}
+			}
+		}
+	}
+}
+
+.quote-format {
+	background: $highlight;
+	padding: 1.5em;
+
+	blockquote {
+		font-size: 1.2em;
+		color: white;
+		border-left: 0;
+		padding: 0;
+		margin: 0;
+
+		cite {
+			display: block;
+			color: white;
+			opacity: 0.8;
+			padding-top: 1em;
+			font-size: 0.8em;
+		}
+	}
+}
+
+/* author box */
+.author-box {
+	margin-bottom: 2em;
+	padding: 1.5em;
+	background: darken(white, 5%);
+
+	.author-avatar {
+		float: left;
+
+		img {
+			border-radius: 3px;	
+		}
+	}
+
+	.author-bio {
+		margin-left: 6.5em;
+
+		a {
+			color: lighten(black, 40%);
+		}
+
+		h3 {
+			font-size: 1.2em;
+			padding-bottom: .5em;
+		}
+	}
+}
+
+/* archive pagination */
+.pagination {
+	$pagination-border-color: $base-border-color;
+	$pagination-background: lighten($pagination-border-color, 10);
+	$pagination-hover-background: lighten($pagination-background, 5);
+	$pagination-color: lighten(black, 40%);
+
+  	text-align: center;
+  	margin-bottom: 2em;
+
+  	ul {
+	    display: inline;
+	    text-align: center;
+
+	    li {
+	      	display: inline;
+	    }
+
+	    ul li {
+	      	display: none;
+	      
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3) {
+				display: inline;
+	      	}
+
+	      	@include media($large-screen) {
+	        	display: inline;
+	      	}
+	    }
+
+	    li a {
+			@include transition (all 0.2s ease-in-out);
+			background: $pagination-background;
+			border-radius: $base-border-radius;
+			border: none;
+			color: $pagination-color;
+			padding: .5em 1em;
+
+			&:hover,
+			&:focus {
+				background: $pagination-hover-background;
+				color: $base-link-color;
+			}
+
+	      	&:active {
+	        	background: $pagination-background;
+	      	}
+	    }
+
+	    li.active a {
+			background: darken(white, 30%);
+			color: white;
+	    }
+  	}
+}

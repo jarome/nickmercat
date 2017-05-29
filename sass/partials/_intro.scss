@@ -1,0 +1,61 @@
+
+section.intro {
+	padding: 0;
+	background: linear-gradient($overlay, $overlay),
+				// url('../img/nz-road.jpg') no-repeat;
+				url('../img/nz-road.jpg') no-repeat;
+	background-size: cover;
+	color: white;
+	text-transform: uppercase;
+
+	.container {
+		@include media($small-screen-up) {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}	
+
+		@include media($small-screen-down) {
+			padding-top: 8em;
+		}
+	}
+
+	h1 {
+		text-align: center;
+		color: white;
+		padding-bottom: .5em;
+
+		img {
+		    max-width: 50%;
+		}	
+	}
+
+	h3 {
+		text-align: center;
+		font-size: 1.2em;
+		padding: 0 20%;
+	}
+
+	a.jump-down {
+		position: absolute;
+		bottom: 609px;
+		left: 20%;
+		right: 20%;
+		margin: 2em auto 0;
+		display: block;
+		width: 4em;
+		text-align: center;
+
+		i {
+			color: white;
+			opacity: 0.5;
+			font-size: 3.5em;	
+			text-align: center;
+			transition: opacity 0.2s;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}

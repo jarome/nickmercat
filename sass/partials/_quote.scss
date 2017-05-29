@@ -1,0 +1,70 @@
+
+.quote {
+	padding: 6em 0;
+	background: linear-gradient($overlay, $overlay),
+				// url('../img/nz-road.jpg') no-repeat;
+				url('../img/green-hills.jpg') no-repeat;
+	background-size: cover;
+
+	#quote-slider {
+
+		.owl-dots {
+			margin-top: 2em;
+
+			.owl-dot {
+				
+				span {
+					background-color: white;
+					opacity: 0.4;
+
+					&:hover {
+						opacity: 0.7;
+					}
+				}
+
+				&.active span {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	blockquote {
+
+		@include media($medium-screen-down) {
+			@include pad(0 10px);
+			font-size: 1.6em;
+		}
+		@include media($small-screen-down) {
+			font-size: 1.3em;
+		}
+		text-align: center;
+		font-style: normal;
+		color: white;
+		font-size: 2em;
+		margin: 0;
+		border: 0;
+		padding-left: 0;
+		cursor: move;
+
+		cite {
+
+			@include media($medium-screen-down) {
+				font-size: .7em;
+			}
+
+			padding-top: 1.5em;
+			font-size: .6em;
+			color: white;
+			display: block;
+
+			a {
+				color: darken($highlight, 20%);
+
+				&:hover {
+					color: darken($highlight, 30%);
+				}
+			}
+		}
+	}
+}

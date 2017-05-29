@@ -1,0 +1,57 @@
+
+footer.footer {
+	padding-top: 1em;
+
+	.container {
+		border-top: dashed 2px darken(white, 5%);
+	}
+
+	p.copyright {
+		
+		@include media($medium-screen-down) {
+			@include span-columns(4);
+			text-align: center;
+			padding: 2em 0 0;
+		}
+
+		@include span-columns(8);
+
+		padding: 2em 0;
+		color: darken(white, 25%);
+		
+		margin-bottom: 0;
+	}
+
+	ul.social {
+
+		@include media($medium-screen-down) {
+			@include span-columns(4);
+			text-align: center;
+			padding: 0;
+		}
+		
+		@include span-columns(4);
+
+		float: right;
+		text-align: right;
+		margin: 2em auto;
+
+		li {
+			display: inline-block;
+			text-align: center;
+			list-style: none;
+			color: darken(white, 20%);
+			transition: all 0.2s;
+
+			a {
+				font-size: 1.3em;
+				padding: 0 0 0 1.2em;
+				color: darken(white, 20%);
+
+				&:hover {
+					color: $highlight;
+				}
+			}
+		}
+	}
+}

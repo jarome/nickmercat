@@ -1,0 +1,69 @@
+
+.newsletter {
+	padding: 5em 0;
+	background: linear-gradient($overlay, $overlay),
+				// url('../img/nz-road.jpg') no-repeat;
+				url('../img/green-hills.jpg') no-repeat;
+	background-size: cover;
+	color: white;
+
+	.nl-text, 
+	.nl-form {
+		@include span-columns(6);
+
+		@include media($large-screen-down) {
+			@include span-columns(8);
+			@include pad(1em 5%);
+		}
+	}
+
+	.nl-text {
+
+		p {
+			margin-bottom: 0;	
+		}
+	}
+
+	.nl-form {
+
+		input[type="email"] {
+
+			@include media($medium-screen-down) {
+				@inclund span-columns(4);
+				width: 100%;
+				border-radius: 3px;
+			}
+
+			@include span-columns(4 of 6);
+			padding: 0 1em;
+			box-shadow: none;
+			border: none !important;
+			border-radius: 3px 0 0 3px;
+			height: 3em;
+			margin: 0;
+		}
+
+		input[type="submit"] {
+			
+			@include media($medium-screen-down) {
+				@inclund span-columns(4);
+				width: 100%;
+				margin-top: 1em;
+				border-radius: 3px;
+			}
+
+			@include span-columns(2 of 6);
+			@include omega;
+
+			height: 3em;
+			border-radius: 0 3px 3px 0;
+			background: darken($highlight, 10%);
+			text-transform: uppercase;
+			margin: 0;
+
+			&:hover {
+				background: darken($highlight, 5%);
+			}
+		}
+	}
+}

@@ -1,0 +1,70 @@
+
+.contact {
+
+	.form {
+		@include clearfix;
+		padding-bottom: 1em;
+
+		.form-left,
+		.form-right {
+			@include span-columns(6);
+
+			@include media($large-screen-down) {
+				@include span-columns(8);	
+				@include pad(0 5%);
+			}	
+		}
+
+		label {
+			display: none;
+		}
+
+		input {
+			height: 3em;
+			margin-bottom: 1em;
+			padding: 0 1em;
+		}
+
+		textarea {
+			padding: 1em;
+			height: 11em;
+		}
+	}
+
+	p.submit {
+		text-align: center;
+		margin: 0 auto;
+		display: block;
+
+		input {
+			background: $highlight;
+			padding: 1.5em 6em;
+			text-transform: uppercase;
+
+			&:hover {
+				background: lighten($highlight, 5%);
+			}
+		}
+	}
+
+	.form-feedback {
+      	padding: 1em 2em;
+      	color: white;
+    }
+    
+    .form-feedback.form-success {
+        background-color: #2ecc71; 
+    }
+    
+    .form-feedback.form-error {
+        background-color: #e74c3c; 
+    }
+
+    #contact-error {
+    	margin: 0 20% 2em;
+
+		@include media($medium-screen-down) {
+      		margin: 0 5% 2em;
+      	}
+    }	
+}

@@ -1,0 +1,241 @@
+
+$highlight: red;
+$highlight-2: black;
+/* typography */
+body {
+	font-family: 'Montserrat', sans-serif;
+	color: lighten(black, 40%);
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+}
+
+p.lead {
+	font-size: 1.25em;
+	opacity: .5;
+	padding: .8em 0 0 0;
+}
+
+blockquote {
+	font-style: italic;
+	color: darken(white, 30%);
+	font-size: 1.1em;
+	border-left: solid 3px darken(white, 15%);
+}
+
+a {
+	color: $highlight;
+
+	&:hover {
+		color: darken($highlight, 5%);
+	}
+}
+
+input, 
+textarea, 
+button {
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+input[type="text"], 
+input[type="email"],
+textarea {
+	color: darken(white, 40%);
+	border: solid 2px darken(white, 8%) !important;
+	box-shadow: none !important;
+
+	@include placeholder {
+	    color: darken(white, 25%);
+	}
+
+	&:focus {
+		border: solid 2px darken(white, 20%) !important;
+	}
+} 
+
+/* layout */
+.container {
+	@include outer-container;
+	padding: 0 .5em;
+}
+
+html, body, section.intro, .split, .split-text {
+	height: 100%;
+}
+
+section {
+	padding: 6em 0 3em;
+}
+
+gem install neat -v 1.7.2
+.color-overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0.7;
+	background-color: $highlight;
+
+}
+
+hr {
+	border: solid 2px rgba(0,0,0,0.1);
+	margin: 1em auto 1.5em;
+
+	&.small {
+		width: 50px;	
+	}
+}
+
+/* title section */
+.title {
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 3em;
+
+	h2 {
+		
+	}
+
+	p {
+		opacity: 0.5;
+		font-size: 1.25em
+	}
+}
+
+/* buttons */
+a.button.alt, 
+a.button.large.alt {
+	background: $highlight-2;
+
+	&:hover {
+		background: lighten($highlight-2, 8%);
+	}
+}
+
+a.button.large {
+	background: $highlight;
+	text-transform: uppercase;
+	margin-top: 1em;
+	padding: 1em 2em;
+
+	&:hover {
+		background: lighten($highlight, 8%);
+	}
+}
+
+.error-404 {
+	padding: 9em 0 3em;
+	text-align: center;
+
+	h1 {
+		font-size: 10em;
+		font-weight: bold;
+		color: darken(white, 10%);
+		padding-bottom: .1em;
+
+		// @include media($large-screen-down) {
+		// 	font-size: 8em;
+		// }
+
+		// @include media($medium-screen-down) {
+		// 	font-size: 7em;
+		// }
+
+		@include media($small-screen-down) {
+			font-size: 7em;
+		}
+	}
+
+	h2 {
+		font-size: 6em;
+		padding-bottom: .3em;
+		
+		@include media($large-screen-down) {
+			font-size: 5em;
+		}
+
+		@include media($medium-screen-down) {
+			font-size: 4em;
+		}
+
+		@include media($small-screen-down) {
+			font-size: 3em;
+		}
+	}
+
+	p {
+		font-size: 1.5em;
+		@include pad(0 20%);
+
+		@include media($medium-screen-down) {
+			@include pad(0 5%);
+			font-size: 1.2em;
+		}
+	}
+}
+
+/* owl carousel styles */
+.owl-theme .owl-dots .owl-dot span {
+	height: 14px;
+	width: 14px;
+}
+
+.owl-theme .owl-nav [class*='owl-'] {
+	padding: .5em 1em;
+}
+
+.owl-carousel {
+	cursor: move;
+}
+
+/* flexslider */
+.flexslider {
+	margin: 0;
+}
+
+.flex-control-nav {
+	bottom: 0;
+	z-index: 100;
+
+	li a {
+		background: white;
+		opacity: 0.5;
+		height: 14px;
+		width: 14px;
+		box-shadow: none;
+
+		&:hover {
+			opacity: 0.7;
+		}
+
+		&.flex-active {
+			background: white;
+			opacity: 1;
+		}
+	}
+}
+
+.flex-direction-nav a {
+	height: 52px;
+	width: 52px;
+	top: 45%;
+	font-weight: bold;
+	box-shadow: none;
+	text-shadow: none;
+	color: white;
+
+	&:before {
+		font-family: 'Fontawesome';
+		font-size: 3em; 
+		display: inline-block; 
+		content: '\f104'; 
+	}
+
+	&.flex-next:before { 
+		content: '\f105'; 
+	}
+}
