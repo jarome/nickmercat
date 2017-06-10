@@ -8,12 +8,12 @@
 	</head>
 	<body <?php body_class();?>>
 		<!-- ///// NAVIGATION HEADER ///// -->
-		<header id="navigation" class="navigation headroom">
+		<header id="navigation" class="navigation headroom has-shadow">
 			<div class="navigation-wrapper">
 		    	<?php if( get_header_image() ):?>
 		    		<a title="<?php bloginfo( 'description' );?>" href="<?php print home_url();?>" class="logo"><img src="<?php header_image(); ?>" alt="<?php bloginfo('description');?>"></a>
 		    	<?php else:?>
-		    		<h1 class="site-heading"><a href="<?php print home_url();?>"><?php bloginfo( 'name' );?></a></h1>
+		    		<a class="logo js-logo" href="<?php print home_url();?>"><!--<img src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_icon.svg" alt="<?php bloginfo('description');?>">--></a>
 		    	<?php endif;?>
 				<!-- mobile menu toggle -->
 		    	<a href="" class="navigation-menu-button" id="js-mobile-menu"><?php _e('MENU','neat');?></a>

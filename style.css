@@ -261,9 +261,7 @@ section .bg_player {
 	left: 0;
 	background: #000;
 }
-section.intro a.jump-down{
-	bottom: -3em;
-}
+
 .showcase {
 	padding: 5em 0 5em;
 }
@@ -393,9 +391,7 @@ header.navigation ul.submenu .submenu {
 	padding-left: 0px;
 	padding-right: 30px
 }
-header.navigation.headroom .nav {
-    margin-top: 1.5em;
-}
+
 header.navigation.headroom ul#navigation-menu {
     margin-top: 0;
 }

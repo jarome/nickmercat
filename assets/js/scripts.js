@@ -3,7 +3,23 @@
 	"use strict";
 
 	$(document).ready(function() {
-		
+
+    function toggleDeviceState() {
+      var windowsize = $(window).innerWidth();
+      if(windowsize > 900) {
+        $('body').addClass('desktop-site').removeClass('mobile-site');
+      } else {
+
+        $('body').addClass('mobile-site').removeClass('desktop-site');
+      }
+    }
+
+    toggleDeviceState();
+
+    $(window).bind('resize',function(){
+      toggleDeviceState();
+    });
+
 		try {
 			// PARALLAX BACKGROUNDS FOR DESKTOPS
 			
@@ -27,17 +43,29 @@
 
 		try {
 			// MOBILE NAVIGATION MENU DROPDOWN
-		
+
+			var navigation = $('.navigation');
 		  	var menu = $('#navigation-menu');
 			var menuToggle = $('#js-mobile-menu');
 			var menuLink = $('.navigation .nav-link a');
-			
+			var siteLogo = $('.js-logo');
+
 			if(menu.is(':hidden')) {
 				menu.removeAttr('style');
 			}
-	
+
 		  	$(menuToggle).on('click', function(e) {
 		    	e.preventDefault();
+
+          if(menu.is(':hidden')) {
+            menuToggle.text('Close');
+            navigation.toggleClass('mobile-navigation-active');
+            siteLogo.toggleClass('invert-logo');
+          } else {
+						menuToggle.text('Menu');
+            navigation.toggleClass('mobile-navigation-active');
+            siteLogo.toggleClass('invert-logo');
+					}
 		    	menu.slideToggle(function(){
 					if(menu.is(':hidden')) {
 						menu.removeAttr('style');

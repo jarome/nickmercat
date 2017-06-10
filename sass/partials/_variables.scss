@@ -1,3 +1,4 @@
+// Media query definitions
 $xl-screen-down: max-width 64.063em;
 $xl-screen-up: max-width 64.063em;
 
@@ -9,8 +10,19 @@ $small-screen-down: max-width 30em;
 $small-screen-up: min-width 30em;
 
 $medium-screen-down: max-width 37.5em;
-$medium-screen-up: max-width 64.063em;
+$medium-screen-up: max-width 37.5em;
 
+// Theme variables
 
-$base-link-color: red;
-$base-accent-color: orange;
+$base-primary-color: #000000;
+$base-color-accent: #DB0000;
+
+$base-primary-grey: #E6E6E6;
+$base-secondary-grey: #999999;
+
+$base-link-color: $base-primary-color;
+$base-accent-color: $base-color-accent;
+
+$highlight:	$base-color-accent;
+$highlight-2: black;
+$overlay: rgba(46,204,113, 0.7);

@@ -1,6 +1,10 @@
 
 header.navigation {
 
+  &.has-shadow {
+    box-shadow: 0 6px 13px rgba(0, 0, 0, 0.30);;
+  }
+
 	&.headroom--unpinned {
 		transform: translateY(-100%);
 	}
@@ -12,12 +16,13 @@ header.navigation {
 
 	$navigation-padding: 1em;
 	$navigation-background: darken(white, 5%);
-	$navigation-color: darken(white, 30%);
+	$navigation-color: $base-primary-color;
 	$navigation-color-hover: $highlight;
 	$navigation-height: 6em;
 	$horizontal-bar-mode: $large-screen;
 	$navigation-submenu-padding: 1em;
-  	$navigation-submenu-width: 12em;
+  $navigation-submenu-width: 12em;
+
 
 	&.headroom {
 		position: fixed;
@@ -37,26 +42,35 @@ header.navigation {
 	  	}
 
 	  	.logo {
-		    float: left;    
+		    float: left;
+				background: url('../img/Logo_icon.svg') center center no-repeat;
 		    max-height: $navigation-height;
 		    padding-left: $navigation-padding;
 		    padding-right: 2em;
-
+				background-size: contain;
+				height: 64px;
+        width: 148px;
+				&.invert-logo {
+					background: url('../img/Logo_icon_white.svg') center center no-repeat;
+					background-size: contain;
+				}
 		    img {
 		     	max-height: $navigation-height;
-		      	padding: 1.7em 0;
+          padding: 1.25em 0;
+          width: 100%;
 		    }
 	  	}
 
-	  
+
 		// MOBILE VIEW
 
 	  	.navigation-menu-button {
 		    color: $navigation-color;
 		    display: block;
 		    float: right;
-		    font-family: $sans-serif;
-		    font-weight: 700;
+		    font-family: 'Montserrat', sans-serif;
+		    font-weight: normal;
+        text-decoration: none;
 		    line-height: $navigation-height;
 		    margin: 0;
 		    padding-right: 1em;
@@ -71,21 +85,22 @@ header.navigation {
 	    	}
 	  	}
 
-	  
+
 		// NAVIGATION MENU
 
 	  	.nav {
 	    	z-index: 9999999;
 	    	float: none;
-	    
+        margin-top: 48px;
+
+
 	    	@include media ($horizontal-bar-mode) {
-	    		margin-top: 1em;
 	      		float: right;
 	    	}
 	  	}
 
-	  	ul#navigation-menu {    
-	    	-webkit-transform-style: preserve-3d; 
+	  	ul#navigation-menu {
+	    	-webkit-transform-style: preserve-3d;
 			// stop webkit flicker
 		    clear: both;
 		    display: none;
@@ -102,7 +117,7 @@ header.navigation {
 	    	}
 	  	}
 
-	  
+
 		// NAVIGATION LINKS
 
 	  	ul li.nav-link {
@@ -117,7 +132,8 @@ header.navigation {
 	  			border-bottom: solid 1px darken($navigation-background, 5%);
 	  		}
 
-		    background: $navigation-background;
+        font-size: rem(14px);
+        letter-spacing: 2px;
 		    display: block;
 		    line-height: 4em;
 		    overflow: hidden;
@@ -140,12 +156,18 @@ header.navigation {
 
 	    	a {
 				display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
 				font-weight: 400;
+				@include media($large-screen-down) {
+					color: #FFFFFF;
+				}
 				color: $navigation-color;
 
 	      		@include media ($horizontal-bar-mode) {
 	        		padding-right: 1em;
 	      		}
+
 
 	      		&:hover {
 	        		color: $navigation-color-hover;
@@ -153,6 +175,9 @@ header.navigation {
 
       			@include media($large-screen-down) {
       				display: block;
+							&:hover {
+								color: #FFFFFF;
+							}
       			}
 	    	}
 	  	}
@@ -213,7 +238,7 @@ header.navigation {
 		        font-size: 1.2em;
 		        position: absolute;
 		        right: $navigation-submenu-padding / 2;
-		    }      
+		    }
 		}
 
 		&:hover > .submenu {
@@ -287,4 +312,31 @@ header.navigation {
 	      	}
 	    }
 	}
-}  
+}
+
+// Mobile specific styles
+
+.mobile-site {
+	header.navigation {
+		&.mobile-navigation-active {
+			height: 100%;
+			background-color: rgba(219, 0, 0, 0.8) !important;
+			.navigation-menu-button {
+				color: #FFFFFF;
+			}
+		}
+	}
+}
+
+.hero-carousel__logo-overlay {
+  background: url('../img/Logo_icon_white.svg') center center no-repeat;
+  background-size: contain;
+  width: 251px;
+  height: 165px;
+  left: 20%;
+  position: absolute;
+  right: 20%;
+  margin: 2em auto 0;
+  bottom: 222px;
+  z-index: 9;
+}

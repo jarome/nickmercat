@@ -1,10 +1,101 @@
 
 footer.footer {
-	padding-top: 1em;
-
-	.container {
-		border-top: dashed 2px darken(white, 5%);
+	padding-top: 30px;
+	background: #000000;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: rem(12px);
+  a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+	.footer-logo {
+		float: left;
+		background: url('../img/Logo_footer_HOZ.svg') center center no-repeat;
+		background-size: contain;
+		height: 56px;
+		width: 193px;
+    @include media ($large-screen-down) {
+      float: inherit;
+      margin: 0 auto;
+    }
 	}
+
+	ul.footer-social-links {
+		list-style-type: none;
+		margin: 19px 0 0 0;
+		padding: 0;
+    float: right;
+    width: 121px;
+    @include media ($large-screen-down) {
+      float: inherit;
+      margin: 0 auto;
+      margin-top: 19px;
+    }
+    li {
+      display: inline-block;
+      margin-left: 10px;
+      .footer-social-links__item {
+        text-indent: -9999px;
+        font-size: 0;
+        display: block;
+        width: 24px;
+        height: 25px;
+      }
+    }
+		.footer-social-links__instagram {
+			background: url('../img/social/Instagram.svg') center center no-repeat;
+			background-size: contain;
+		}
+		.footer-social-links__facebook {
+			background: url('../img/social/Facebook.svg') center center no-repeat;
+			background-size: contain;
+		}
+		.footer-social-links__twitter {
+			background: url('../img/social/Twitter.svg') center center no-repeat;
+			background-size: contain;
+		}
+	}
+
+  .footer-information {
+    border-top: 1px solid #FFFFFF;
+    margin-top: 30px;
+    padding: 20px 0;
+    @include media ($large-screen-down) {
+      padding: 30px 0;
+    }
+
+    .footer-information__copyright {
+      float: left;
+      @include media ($large-screen-down) {
+        float: inherit;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        top: 20px;
+      }
+    }
+
+    .footer-information__terms {
+      float: right;
+      @include media ($large-screen-down) {
+        float: inherit;
+        margin: 0 auto;
+        width: 265px;
+        position: relative;
+        top: -20px;
+      }
+      li {
+        display: inline-block;
+        border-right: 1px solid #FFFFFF;
+        padding: 0 20px;
+        &:last-child {
+          border-right: none;
+          padding-right: 0;
+        }
+      }
+    }
+  }
 
 	p.copyright {
 		

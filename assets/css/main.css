@@ -815,9 +815,9 @@ blockquote {
   border-left: solid 3px #d9d9d9; }
 
 a {
-  color: red; }
+  color: #DB0000; }
   a:hover {
-    color: #e60000; }
+    color: #c20000; }
 
 input,
 textarea,
@@ -876,7 +876,7 @@ gem install neat -v 1.7.2
   top: 0;
   left: 0;
   opacity: 0.7;
-  background-color: red; }
+  background-color: #DB0000; }
 
 hr {
   border: solid 2px rgba(0, 0, 0, 0.1);
@@ -902,12 +902,12 @@ a.button.large.alt {
     background: #141414; }
 
 a.button.large {
-  background: red;
+  background: #DB0000;
   text-transform: uppercase;
   margin-top: 1em;
   padding: 1em 2em; }
   a.button.large:hover {
-    background: #ff2929; }
+    background: #ff0505; }
 
 .error-404 {
   padding: 9em 0 3em;
@@ -989,6 +989,9 @@ a.button.large {
 /* ====================
  5. HEADER 
 ==================== */
+header.navigation.has-shadow {
+  box-shadow: 0 6px 13px rgba(0, 0, 0, 0.3); }
+
 header.navigation.headroom--unpinned {
   transform: translateY(-100%); }
 
@@ -1019,18 +1022,27 @@ header.navigation.headroom {
       display: table; }
   header.navigation.headroom .logo {
     float: left;
+    background: url("../img/Logo_icon.svg") center center no-repeat;
     max-height: 6em;
     padding-left: 1em;
-    padding-right: 2em; }
+    padding-right: 2em;
+    background-size: contain;
+    height: 64px;
+    width: 148px; }
+    header.navigation.headroom .logo.invert-logo {
+      background: url("../img/Logo_icon_white.svg") center center no-repeat;
+      background-size: contain; }
     header.navigation.headroom .logo img {
       max-height: 6em;
-      padding: 1.7em 0; }
+      padding: 1.25em 0;
+      width: 100%; }
   header.navigation.headroom .navigation-menu-button {
-    color: #b3b3b3;
+    color: #000000;
     display: block;
     float: right;
-    font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
-    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    text-decoration: none;
     line-height: 6em;
     margin: 0;
     padding-right: 1em;
@@ -1039,13 +1051,13 @@ header.navigation.headroom {
       header.navigation.headroom .navigation-menu-button {
         display: none; } }
     header.navigation.headroom .navigation-menu-button:hover {
-      color: red; }
+      color: #DB0000; }
   header.navigation.headroom .nav {
     z-index: 9999999;
-    float: none; }
+    float: none;
+    margin-top: 48px; }
     @media screen and (min-width: 900px) {
       header.navigation.headroom .nav {
-        margin-top: 1em;
         float: right; } }
   header.navigation.headroom ul#navigation-menu {
     -webkit-transform-style: preserve-3d;
@@ -1062,7 +1074,8 @@ header.navigation.headroom {
         margin: 0;
         padding: 0; } }
   header.navigation.headroom ul li.nav-link {
-    background: #f2f2f2;
+    font-size: 0.875rem;
+    letter-spacing: 2px;
     display: block;
     line-height: 4em;
     overflow: hidden;
@@ -1086,19 +1099,26 @@ header.navigation.headroom {
         text-decoration: none;
         width: auto; } }
     header.navigation.headroom ul li.nav-link.active a {
-      color: red; }
+      color: #DB0000; }
     header.navigation.headroom ul li.nav-link a {
       display: inline-block;
+      text-decoration: none;
+      text-transform: uppercase;
       font-weight: 400;
-      color: #b3b3b3; }
+      color: #000000; }
+      @media screen and (max-width: 53.75em) {
+        header.navigation.headroom ul li.nav-link a {
+          color: #FFFFFF; } }
       @media screen and (min-width: 900px) {
         header.navigation.headroom ul li.nav-link a {
           padding-right: 1em; } }
       header.navigation.headroom ul li.nav-link a:hover {
-        color: red; }
+        color: #DB0000; }
       @media screen and (max-width: 53.75em) {
         header.navigation.headroom ul li.nav-link a {
-          display: block; } }
+          display: block; }
+          header.navigation.headroom ul li.nav-link a:hover {
+            color: #FFFFFF; } }
 
 header.navigation li.more.nav-link {
   padding-right: 0; }
@@ -1123,7 +1143,7 @@ header.navigation li.more.nav-link {
     bottom: auto;
     left: auto;
     content: '\25BE';
-    color: #b3b3b3; }
+    color: #000000; }
 
 header.navigation li.more {
   overflow: visible;
@@ -1193,6 +1213,24 @@ header.navigation ul.submenu {
           text-align: left;
           width: 12em; } }
 
+.mobile-site header.navigation.mobile-navigation-active {
+  height: 100%;
+  background-color: rgba(219, 0, 0, 0.8) !important; }
+  .mobile-site header.navigation.mobile-navigation-active .navigation-menu-button {
+    color: #FFFFFF; }
+
+.hero-carousel__logo-overlay {
+  background: url("../img/Logo_icon_white.svg") center center no-repeat;
+  background-size: contain;
+  width: 251px;
+  height: 165px;
+  left: 20%;
+  position: absolute;
+  right: 20%;
+  margin: 2em auto 0;
+  bottom: 222px;
+  z-index: 9; }
+
 /* ====================
 6. INTRO SECTION
 ==================== */
@@ -1237,6 +1275,9 @@ section.intro {
       transition: opacity 0.2s; }
       section.intro a.jump-down i:hover {
         opacity: 1; }
+
+section.intro a.jump-down {
+  bottom: 80px; }
 
 /* ====================
 7. FEATURES SECTION
@@ -1292,7 +1333,7 @@ section.intro {
     margin-bottom: .3em;
     transition: color .2s; }
   .features .feature-item:hover i {
-    color: red; }
+    color: #DB0000; }
 
 /* ====================
 8. NEWSLETTER SECTION
@@ -1350,7 +1391,7 @@ section.intro {
     margin-right: 0;
     height: 3em;
     border-radius: 0 3px 3px 0;
-    background: #cc0000;
+    background: #a80000;
     text-transform: uppercase;
     margin: 0; }
     @media screen and (max-width: 37.5em) {
@@ -1362,7 +1403,7 @@ section.intro {
     .newsletter .nl-form input[type="submit"]:last-child {
       margin-right: 0; }
     .newsletter .nl-form input[type="submit"]:hover {
-      background: #e60000; }
+      background: #c20000; }
 
 /* ====================
 9. SHOWCASE SECTION
@@ -1480,9 +1521,9 @@ section.intro {
         .quote blockquote cite {
           font-size: .7em; } }
       .quote blockquote cite a {
-        color: #990000; }
+        color: #750000; }
         .quote blockquote cite a:hover {
-          color: #660000; }
+          color: #420000; }
 
 /* ====================
 11. BLOG SECTION
@@ -1495,7 +1536,7 @@ section.blog {
     margin-bottom: 1em;
     cursor: move; }
     section.blog #blog-teasers .blog-item:hover a.featured-image {
-      background: red; }
+      background: #DB0000; }
     section.blog #blog-teasers .blog-item:hover .blog-teaser {
       background: #fcfcfc; }
     section.blog #blog-teasers .blog-item:hover img {
@@ -1532,7 +1573,7 @@ section.blog {
       margin-bottom: .3em;
       transition: color .2s; }
     section.blog #blog-teasers .blog-item:hover i {
-      color: red; }
+      color: #DB0000; }
   section.blog a.button {
     text-align: center;
     padding: 1em 2em;
@@ -1720,7 +1761,7 @@ section.blog {
             background: #e6e6e6; }
 
 .quote-format {
-  background: red;
+  background: #DB0000;
   padding: 1.5em; }
   .quote-format blockquote {
     font-size: 1.2em;
@@ -1779,7 +1820,7 @@ section.blog {
       padding: .5em 1em; }
       .pagination ul li a:hover, .pagination ul li a:focus {
         background: white;
-        color: red; }
+        color: #000000; }
       .pagination ul li a:active {
         background: #f7f7f7; }
     .pagination ul li.active a {
@@ -1811,7 +1852,7 @@ ul.comments {
       height: auto;
       border-radius: 3px;
       padding: 0;
-      background: #ffc04d;
+      background: #ff2929;
       display: block;
       max-width: none; }
     .comment-reverse-order .comment .comment-image {
@@ -1875,11 +1916,11 @@ p.form-submit {
   display: block;
   margin-top: -1em; }
   p.form-submit input {
-    background: red;
+    background: #DB0000;
     padding: 1em 2em;
     text-transform: uppercase; }
     p.form-submit input:hover {
-      background: #ff1a1a; }
+      background: #f50000; }
 
 /* ====================
 12. CONTACT SECTION
@@ -1925,11 +1966,11 @@ p.form-submit {
   margin: 0 auto;
   display: block; }
   .contact p.submit input {
-    background: red;
+    background: #DB0000;
     padding: 1.5em 6em;
     text-transform: uppercase; }
     .contact p.submit input:hover {
-      background: #ff1a1a; }
+      background: #f50000; }
 
 .contact .form-feedback {
   padding: 1em 2em;
@@ -1951,9 +1992,85 @@ p.form-submit {
 13. FOOTER
 ==================== */
 footer.footer {
-  padding-top: 1em; }
-  footer.footer .container {
-    border-top: dashed 2px #f2f2f2; }
+  padding-top: 30px;
+  background: #000000;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 0.75rem; }
+  footer.footer a {
+    color: #FFFFFF;
+    text-decoration: none; }
+  footer.footer .footer-logo {
+    float: left;
+    background: url("../img/Logo_footer_HOZ.svg") center center no-repeat;
+    background-size: contain;
+    height: 56px;
+    width: 193px; }
+    @media screen and (max-width: 53.75em) {
+      footer.footer .footer-logo {
+        float: inherit;
+        margin: 0 auto; } }
+  footer.footer ul.footer-social-links {
+    list-style-type: none;
+    margin: 19px 0 0 0;
+    padding: 0;
+    float: right;
+    width: 121px; }
+    @media screen and (max-width: 53.75em) {
+      footer.footer ul.footer-social-links {
+        float: inherit;
+        margin: 0 auto;
+        margin-top: 19px; } }
+    footer.footer ul.footer-social-links li {
+      display: inline-block;
+      margin-left: 10px; }
+      footer.footer ul.footer-social-links li .footer-social-links__item {
+        text-indent: -9999px;
+        font-size: 0;
+        display: block;
+        width: 24px;
+        height: 25px; }
+    footer.footer ul.footer-social-links .footer-social-links__instagram {
+      background: url("../img/social/Instagram.svg") center center no-repeat;
+      background-size: contain; }
+    footer.footer ul.footer-social-links .footer-social-links__facebook {
+      background: url("../img/social/Facebook.svg") center center no-repeat;
+      background-size: contain; }
+    footer.footer ul.footer-social-links .footer-social-links__twitter {
+      background: url("../img/social/Twitter.svg") center center no-repeat;
+      background-size: contain; }
+  footer.footer .footer-information {
+    border-top: 1px solid #FFFFFF;
+    margin-top: 30px;
+    padding: 20px 0; }
+    @media screen and (max-width: 53.75em) {
+      footer.footer .footer-information {
+        padding: 30px 0; } }
+    footer.footer .footer-information .footer-information__copyright {
+      float: left; }
+      @media screen and (max-width: 53.75em) {
+        footer.footer .footer-information .footer-information__copyright {
+          float: inherit;
+          margin: 0 auto;
+          text-align: center;
+          position: relative;
+          top: 20px; } }
+    footer.footer .footer-information .footer-information__terms {
+      float: right; }
+      @media screen and (max-width: 53.75em) {
+        footer.footer .footer-information .footer-information__terms {
+          float: inherit;
+          margin: 0 auto;
+          width: 265px;
+          position: relative;
+          top: -20px; } }
+      footer.footer .footer-information .footer-information__terms li {
+        display: inline-block;
+        border-right: 1px solid #FFFFFF;
+        padding: 0 20px; }
+        footer.footer .footer-information .footer-information__terms li:last-child {
+          border-right: none;
+          padding-right: 0; }
   footer.footer p.copyright {
     float: left;
     display: block;
@@ -2005,7 +2122,7 @@ footer.footer {
         padding: 0 0 0 1.2em;
         color: #cccccc; }
         footer.footer ul.social li a:hover {
-          color: red; }
+          color: #DB0000; }
 
 /* ====================
 14. USER CUSTOMISATION 

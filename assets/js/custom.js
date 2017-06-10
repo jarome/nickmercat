@@ -6,7 +6,7 @@
 			$.browserSelector();
 			// Adds window smooth scroll on chrome.
 			if($("html").hasClass("chrome")) {
-				$.smoothScroll();
+				//$.smoothScroll();
 			}
 		} catch(e) {
 			console.log( e.message );
