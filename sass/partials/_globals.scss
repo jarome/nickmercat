@@ -1,14 +1,25 @@
 /* typography */
 body {
 	font-family: 'Montserrat', sans-serif;
-	color: lighten(black, 40%);
+	color: $base-primary-color;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h3, h4, h5 {
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
 }
 
+h2 {
+	font-family: $bebas-regular-font-stack;
+	font-size: rem(60px);
+	font-weight: 900;
+}
+
+p {
+	color: #000000;
+	font-size: rem(14px);
+	line-height: 22px;
+}
 p.lead {
 	font-size: 1.25em;
 	opacity: .5;
@@ -24,7 +35,7 @@ blockquote {
 
 a {
 	color: $highlight;
-
+  text-decoration: none;
 	&:hover {
 		color: darken($highlight, 5%);
 	}
@@ -58,7 +69,7 @@ textarea {
 	padding: 0 .5em;
 }
 
-html, body, section.intro, .split, .split-text {
+html, body, .split, .split-text {
 	height: 100%;
 }
 
@@ -66,7 +77,6 @@ section {
 	padding: 6em 0 3em;
 }
 
-gem install neat -v 1.7.2
 .color-overlay {
 	position: absolute;
 	height: 100%;
@@ -114,13 +124,20 @@ a.button.large.alt {
 }
 
 a.button.large {
-	background: $highlight;
+	background-color: $base-primary-color;
 	text-transform: uppercase;
 	margin-top: 1em;
 	padding: 1em 2em;
+	text-decoration: none;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 
 	&:hover {
-		background: lighten($highlight, 8%);
+		background-color: $highlight;
+		-webkit-transition: background-color 200ms linear;
+		-ms-transition: background-color 200ms linear;
+		transition: background-color 200ms linear;
 	}
 }
 
@@ -173,12 +190,6 @@ a.button.large {
 			font-size: 1.2em;
 		}
 	}
-}
-
-/* owl carousel styles */
-.owl-theme .owl-dots .owl-dot span {
-	height: 14px;
-	width: 14px;
 }
 
 .owl-theme .owl-nav [class*='owl-'] {
@@ -235,4 +246,10 @@ a.button.large {
 	&.flex-next:before { 
 		content: '\f105'; 
 	}
+}
+
+.np-logo {
+	background: url('../img/Logo_icon.svg') center center no-repeat;
+	background-size: contain;
+	margin: 0 auto;
 }

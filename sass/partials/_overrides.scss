@@ -1,0 +1,23 @@
+.np-about-slider {
+	.flexslider {
+		border: none !important;
+		box-shadow: none !important;
+		width: 100%;
+		height: auto;
+		margin: 0 auto !important;
+		img {
+			width: 100%;
+			height: auto;
+		}
+		@include media($medium-screen-up) {
+			float: right;
+			width: 418px;
+			height: 340px;
+			img {
+				width: 418px;
+
+				height: 340px;
+			}
+		}
+	}
+}

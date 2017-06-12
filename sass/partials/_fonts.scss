@@ -1,3 +1,9 @@
 //@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+@font-face {
+  font-family: 'Bebas Regular';
+  src: url('../../assets/fonts/BebasNeueRegular.ttf') format('woff2');
+}
+
 $montserrat-font-stack: 'Montserrat', sans-serif;
+$bebas-regular-font-stack: 'Bebas Regular', 'Impact', sans-serif;

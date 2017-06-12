@@ -43,45 +43,21 @@ NEAT - TABLE OF CONTENTS
 @import 'partials/owl-theme';
 
 /* ====================
-4. TEMPLATE GLOBAL STYLES 
+4. TEMPLATE GLOBAL STYLES
 ==================== */
 @import 'partials/globals';
-/* ====================
- 5. HEADER 
-==================== */
+@import 'partials/overrides';
 @import 'partials/header';
-/* ====================
-6. INTRO SECTION
-==================== */
 @import 'partials/intro';
-/* ====================
-7. FEATURES SECTION
-==================== */
 @import 'partials/features';
-/* ====================
-8. NEWSLETTER SECTION
-==================== */
 @import 'partials/newsletter';
-/* ====================
-9. SHOWCASE SECTION
-==================== */
 @import 'partials/showcase';
-/* ====================
-10. QUOTE / TESTIMONIALS
-==================== */
 @import 'partials/quote';
-/* ====================
-11. BLOG SECTION
-==================== */
 @import 'partials/blog';
-/* ====================
-12. CONTACT SECTION
-==================== */
 @import 'partials/contact';
-/* ====================
-13. FOOTER
-==================== */
 @import 'partials/footer';
+@import 'partials/news-feed';
+@import 'partials/partners';
 
 
 /* ====================

@@ -171,16 +171,17 @@
 				autoplayHoverPause : true,
 				responsive : {
 			        480 : {
-			            items : 1,
+								items : 1,
 			        },
 			        767 : {
-			            items : 2,
+								items : 2
 			        },
 			        991 : {
-			            items : 3,
+								items : 3,
+                dots:false
 			        }
 			    }
-			});	
+			});
 		} catch (e) {
 			// TODO: handle exception
 			console.log( e.message );

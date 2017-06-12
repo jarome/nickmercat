@@ -1,4 +1,25 @@
 		<!-- ///// FOOTER ///// -->
+
+    <section class="partners">
+      <h2>Partners</h2>
+      <ul class="partners__partner-list">
+        <li>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/luckydesign.png" width="185" alt="">
+        </li>
+        <li>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/coatshire.png" width="171" alt="">
+        </li>
+        <li>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/morris-finance.png" width="187" alt="">
+        </li>
+        <li>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/timken.png" width="177" alt="">
+        </li>
+        <li>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/arai.png" width="187" alt="">
+        </li>
+      </ul>
+    </section>
 		<footer class="footer">
 			<div class="container">
 			  <div class="footer-logo"></div>

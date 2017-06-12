@@ -1,0 +1,13 @@
+.partners {
+	text-align: center;
+
+	.partners__partner-list {
+		li {
+			display: inline-block;
+			@include media($small-screen-down) {
+				width: 100%;
+			}
+		}
+	}
+
+}

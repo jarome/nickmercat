@@ -9,11 +9,11 @@ section.intro {
 	text-transform: uppercase;
 
 	.container {
-		@include media($small-screen-up) {
+
 			position: relative;
-			top: 50%;
-			transform: translateY(-50%);
-		}	
+		@include media($small-screen-up) {
+
+		}
 
 		@include media($small-screen-down) {
 			padding-top: 8em;

@@ -400,16 +400,11 @@ header.navigation ul.submenu li:last-child > a {
 	border-bottom-right-radius: 0.1875em;
 	padding-bottom: 0.2em;
 }
-.flexslider {
-    border: none;
-    box-shadow: none;
-}
+
 .wpb_gallery .wpb_flexslider .flex-control-nav {
     bottom: -48px;
 }
-.flexslider{
-	border:none!important;
-}
+
 .flex-control-nav{
 	bottom: 0!important;
 }
@@ -538,13 +533,7 @@ article.article-column .post-tags, .main-column .post-tags {
 .article-column .meta span {
     padding-right: .75em;
 }
-section.intro .container {
-   position: relative;
-   top: 50%;
-   -webkit-transform: translateY(-50%);
-   -ms-transform: translateY(-50%);
-   transform: translateY(-50%);
-}
+
 /* =WordPress Core
 -------------------------------------------------------------- */
 /**

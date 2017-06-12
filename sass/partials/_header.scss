@@ -126,7 +126,7 @@ header.navigation {
 	  			padding-left: 0;
 	  		}
 
-	  		@include media($large-screen-down) {
+	  		@include media($medium-screen-down) {
 	  			padding-left: 0;
 	  			text-align: center;
 	  			border-bottom: solid 1px darken($navigation-background, 5%);
@@ -159,7 +159,7 @@ header.navigation {
         text-decoration: none;
         text-transform: uppercase;
 				font-weight: 400;
-				@include media($large-screen-down) {
+				@include media($medium-screen-down) {
 					color: #FFFFFF;
 				}
 				color: $navigation-color;
@@ -173,9 +173,10 @@ header.navigation {
 	        		color: $navigation-color-hover;
       			}
 
-      			@include media($large-screen-down) {
+      			@include media($medium-screen-down) {
       				display: block;
 							&:hover {
+
 								color: #FFFFFF;
 							}
       			}
@@ -337,6 +338,6 @@ header.navigation {
   position: absolute;
   right: 20%;
   margin: 2em auto 0;
-  bottom: 222px;
+  bottom: 341px;
   z-index: 9;
 }

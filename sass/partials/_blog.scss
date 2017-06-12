@@ -1,10 +1,10 @@
 
 section.blog {
-	background: darken(white, 5%);
+	background: $base-primary-grey;
 	text-align: center;
-
 	#blog-teasers {
 
+		text-align: left;
 		.blog-item {
 
 			padding: 0 1em;
@@ -44,17 +44,31 @@ section.blog {
 				//border: solid 1px darken(white, 8%);
 				background: white;
 				border-top: 0;
-
+				font-size: rem(14px);
+				position: relative;
+				line-height: 22px;
+				height: 135px;
 				transition: all 0.2s;
+				font-weight: bold;
+				letter-spacing: 1px;
 
 				h4.post-title a {
-					color: lighten(black, 40%);
+					color: $base-primary-color;
+					text-decoration: none;
 				}
 
 				.meta {
 					color: darken(white, 30%);
 					padding-bottom: .6em;
-					font-size: .9em;
+					position: absolute;
+					font-size: rem(12px);
+					font-weight: normal;
+					bottom: 7px;
+					a {
+
+
+
+					}
 				}
 
 				&.audio {
@@ -74,7 +88,7 @@ section.blog {
 
 			i {
 				font-size: 4em;
-				color: darken(white, 20%);
+				color: $base-secondary-grey;
 				margin-bottom: .3em;
 				transition: color .2s;
 			}

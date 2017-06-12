@@ -1,18 +1,19 @@
 // Media query definitions
-$xl-screen-down: max-width 64.063em;
-$xl-screen-up: max-width 64.063em;
+$xl-screen-down: max-width 1441px;
+$xl-screen-up: max-width 1441px;
 
 
-$large-screen-down: max-width 53.75em;
-$large-screen-up: max-width 53.75em;
+$large-screen-down: max-width 1279px;
+$large-screen-up: max-width 1279px;
 
-$small-screen-down: max-width 30em;
-$small-screen-up: min-width 30em;
+$small-screen-down: max-width 768px;
+$small-screen-up: min-width 768px;
 
-$medium-screen-down: max-width 37.5em;
-$medium-screen-up: max-width 37.5em;
+$medium-screen-down: max-width 900px;
+$medium-screen-up: min-width 900px;
 
 // Theme variables
+
 
 $base-primary-color: #000000;
 $base-color-accent: #DB0000;
