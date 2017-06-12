@@ -10,7 +10,7 @@
 	<?php endif;?>
 	<div class="blog-teaser">
 		<h4 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
-		<?php 
+		<?php
 		/**
 		 * neat_post_meta action.
 		 * hooked neat_post_meta, 10

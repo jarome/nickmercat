@@ -2,6 +2,8 @@
 section.blog {
 	background: $base-primary-grey;
 	text-align: center;
+
+	//Used for Homepage
 	#blog-teasers {
 
 		text-align: left;
@@ -52,9 +54,12 @@ section.blog {
 				font-weight: bold;
 				letter-spacing: 1px;
 
-				h4.post-title a {
-					color: $base-primary-color;
-					text-decoration: none;
+				h4.post-title {
+					letter-spacing: 4px;
+					a {
+						color: $base-primary-color;
+						text-decoration: none;
+					}
 				}
 
 				.meta {

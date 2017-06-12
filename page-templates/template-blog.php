@@ -6,14 +6,11 @@ get_header();
 $bloglayout	=	neat_get_blog_layout();
 ?>
 <div class="blog-single">
+
+  <div class="full-width-header full-width-header__news"><h2>News</h2></div>
+
 	<div class="container">
-		<?php 
-		/**
-		 * neat_page_heading action.
-		 * hooked neat_page_heading, 10
-		 */
-		do_action( 'neat_page_heading' );
-		?>
+
 		<?php if( $bloglayout == 'l_sidebar' ):?><?php get_sidebar();?><?php endif;?>
 		<div class="main-column" id="content">
 			<?php 

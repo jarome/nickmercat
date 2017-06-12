@@ -1,0 +1,15 @@
+.full-width-header {
+	width: 100%;
+	text-align: center;
+	height: 132px;
+	margin-bottom: 6em;
+	h2 {
+		color: #FFFFFF;
+		position :relative;
+		top: 52px;
+	}
+	&.full-width-header__news {
+		background: url('../img/news-header.jpg') center center no-repeat;
+		background-size: cover;
+	}
+}

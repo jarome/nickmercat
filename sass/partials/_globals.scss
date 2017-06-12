@@ -2,6 +2,10 @@
 body {
 	font-family: 'Montserrat', sans-serif;
 	color: $base-primary-color;
+	background-color: $base-primary-grey;
+	&.home {
+		background-color: #FFFFFF;
+	}
 }
 
 h1, h3, h4, h5 {
@@ -12,6 +16,11 @@ h1, h3, h4, h5 {
 h2 {
 	font-family: $bebas-regular-font-stack;
 	font-size: rem(60px);
+	font-weight: 900;
+}
+
+h4 {
+	font-size: rem(18px);
 	font-weight: 900;
 }
 
@@ -51,22 +60,22 @@ input[type="text"],
 input[type="email"],
 textarea {
 	color: darken(white, 40%);
-	border: solid 2px darken(white, 8%) !important;
+	border: solid 1px #999999 !important;
 	box-shadow: none !important;
 
 	@include placeholder {
 	    color: darken(white, 25%);
 	}
 
-	&:focus {
-		border: solid 2px darken(white, 20%) !important;
-	}
 } 
 
 /* layout */
 .container {
 	@include outer-container;
 	padding: 0 .5em;
+	@include media($medium-screen-down) {
+		@include pad(1em 3% 0);
+	}
 }
 
 html, body, .split, .split-text {

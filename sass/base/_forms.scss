@@ -32,7 +32,6 @@ textarea {
   appearance: none;
   background-color: $base-background-color;
   border: $base-border;
-  border-radius: $base-border-radius;
   box-shadow: $_form-box-shadow;
   box-sizing: border-box;
   margin-bottom: $small-spacing;
@@ -45,7 +44,7 @@ textarea {
   }
 
   &:focus {
-    border-color: $action-color;
+    border-color: $base-color-accent;
     box-shadow: $_form-box-shadow-focus;
     outline: none;
   }
