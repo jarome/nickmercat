@@ -2,23 +2,8 @@
 
 .news-feed {
 
-  h2.news-feed-heading {
-    font-size: rem(18px);
-    letter-spacing: 4px;
-    line-height: 22px;
-    .news-feed-heading-large {
-      font-weight: bold;
-      font-family: $bebas-regular-font-stack;
-      font-size: rem(60px);
-      line-height: 54px;
-      letter-spacing: 0;
-      display: block;
-      clear: both;
-      margin-top: 8px;
-    }
-  }
-
   .owl-dots {
     margin-bottom: 20px;
   }
+
 }

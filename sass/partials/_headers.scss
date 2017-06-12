@@ -12,4 +12,9 @@
 		background: url('../img/news-header.jpg') center center no-repeat;
 		background-size: cover;
 	}
+	&.full-width-header__meetnick {
+		background: url('../img/meetnick-header.jpg') center center no-repeat;
+		background-size: cover;
+		height: 392px;
+	}
 }

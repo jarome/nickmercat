@@ -1,0 +1,75 @@
+.career-stats {
+	@include display(flex);
+	@include flex-direction(row);
+	@include media($medium-screen-down) {
+		@include flex-direction(column);
+	}
+
+	.career-stats__container {
+		@include media($medium-screen-up) {
+			max-width: 358px;
+		}
+		margin: 0 auto;
+		padding: 60px 20px 0 20px;
+		@include media($medium-screen-down) {
+			padding: 60px 50px 0 50px;
+		}
+	}
+	.career-stats__col {
+
+
+	}
+
+	.career-stats__about {
+		width: 35%;
+		.career-stats__container {
+			@include media($medium-screen-up) {
+				float: right;
+			}
+		}
+	}
+	.career-stats__facts {
+		width: 30%;
+		background-color: #999999;
+	}
+
+	.career-stats__stats {
+		width: 35%;
+		background-color: #4d4d4d;
+		.career-stats__container {
+			@include media($medium-screen-up) {
+				float: left;
+			}
+
+		}
+		h2, p {
+			color: #FFFFFF;
+		}
+	}
+
+	.career-stats__about, .career-stats__facts, .career-stats__stats {
+		@include media($medium-screen-down) {
+			width: 100%;
+		}
+	}
+
+	ul.career-stats__table {
+		li {
+			width: 100%;
+			clear: both;
+			display: table;
+			margin: 0 0 20px 0;
+		}
+		.career-stats__key {
+			width: 88px;
+			display: table-cell;
+			color: $base-color-accent;
+			font-size: rem(10px);
+			text-transform: uppercase;
+		}
+		.career-stats__value {
+			display: table-cell;
+			font-size: rem(14px);
+		}
+	}
+}

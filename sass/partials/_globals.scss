@@ -13,10 +13,31 @@ h1, h3, h4, h5 {
 	text-transform: uppercase;
 }
 
+strong {
+	font-weight: 900;
+}
 h2 {
 	font-family: $bebas-regular-font-stack;
 	font-size: rem(60px);
 	font-weight: 900;
+}
+
+
+h2.dual-size {
+	font-size: rem(18px);
+	letter-spacing: 4px;
+	line-height: 22px;
+	text-align: center;
+	.dual-size__large {
+		font-weight: bold;
+		font-family: $bebas-regular-font-stack;
+		font-size: rem(60px);
+		line-height: 54px;
+		letter-spacing: 0;
+		display: block;
+		clear: both;
+		margin-top: 8px;
+	}
 }
 
 h4 {
@@ -35,6 +56,9 @@ p.lead {
 	padding: .8em 0 0 0;
 }
 
+.accent {
+	color: $base-color-accent;
+}
 blockquote {
 	font-style: italic;
 	color: darken(white, 30%);
@@ -70,12 +94,16 @@ textarea {
 } 
 
 /* layout */
-.container {
+.container, .container-small {
 	@include outer-container;
 	padding: 0 .5em;
 	@include media($medium-screen-down) {
 		@include pad(1em 3% 0);
 	}
+}
+
+.container-small {
+	max-width: 863px;
 }
 
 html, body, .split, .split-text {
@@ -261,4 +289,8 @@ a.button.large {
 	background: url('../img/Logo_icon.svg') center center no-repeat;
 	background-size: contain;
 	margin: 0 auto;
+}
+
+.white-background {
+	background: #FFFFFF;
 }

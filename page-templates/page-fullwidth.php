@@ -5,6 +5,13 @@
 ?>
 <?php get_header();?>
 	<div <?php post_class('blog-single');?>>
+      <?php
+      if (is_page( 'meet-nick' ) ): ?>
+        <div class="full-width-header full-width-header__meetnick"></div>
+      <?php endif;
+      ?>
+
+
 		<div class="container">
 			<?php neat_yoast_breadcrumb();?>
 			<article class="article-column template-fullwidth">
@@ -16,7 +23,7 @@
 				 */
 				do_action( 'neat_post_format_content' );
 				?>
-				<div class="title"><h2><?php the_title();?></h2></div>
+
 				<?php
 				/**
 				 * hooked, neat_wp_link_pages, 10
