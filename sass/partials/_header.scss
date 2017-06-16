@@ -19,7 +19,7 @@ header.navigation {
 	$navigation-color: $base-primary-color;
 	$navigation-color-hover: $highlight;
 	$navigation-height: 6em;
-	$horizontal-bar-mode: $large-screen;
+	$horizontal-bar-mode: $medium-screen;
 	$navigation-submenu-padding: 1em;
   $navigation-submenu-width: 12em;
 
@@ -50,6 +50,7 @@ header.navigation {
 				background-size: contain;
 				height: 64px;
         width: 148px;
+				margin-top: 16px;
 				&.invert-logo {
 					background: url('../img/Logo_icon_white.svg') center center no-repeat;
 					background-size: contain;
@@ -91,7 +92,9 @@ header.navigation {
 	  	.nav {
 	    	z-index: 9999999;
 	    	float: none;
-        margin-top: 48px;
+				@include media($small-screen-up) {
+					margin-top: 48px;
+				}
 
 
 	    	@include media ($horizontal-bar-mode) {
@@ -126,7 +129,7 @@ header.navigation {
 	  			padding-left: 0;
 	  		}
 
-	  		@include media($medium-screen-down) {
+	  		@include media($small-screen-down) {
 	  			padding-left: 0;
 	  			text-align: center;
 	  			border-bottom: solid 1px darken($navigation-background, 5%);
@@ -159,7 +162,7 @@ header.navigation {
         text-decoration: none;
         text-transform: uppercase;
 				font-weight: 400;
-				@include media($medium-screen-down) {
+				@include media($small-screen-down) {
 					color: #FFFFFF;
 				}
 				color: $navigation-color;
@@ -173,7 +176,7 @@ header.navigation {
 	        		color: $navigation-color-hover;
       			}
 
-      			@include media($medium-screen-down) {
+      			@include media($small-screen-down) {
       				display: block;
 							&:hover {
 

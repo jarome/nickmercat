@@ -9,12 +9,21 @@
 		top: 52px;
 	}
 	&.full-width-header__news {
-		background: url('../img/news-header.jpg') center center no-repeat;
+		background: url('../img/headers/news-header.jpg') center center no-repeat;
 		background-size: cover;
 	}
 	&.full-width-header__meetnick {
-		background: url('../img/meetnick-header.jpg') center center no-repeat;
+		background: url('../img/headers/meetnick-header.jpg') center center no-repeat;
+		@include media($small-screen-down) {
+			background: url('../img/headers/meetnick-header-m.jpg') center center no-repeat;
+			background-size: cover;
+		}
 		background-size: cover;
 		height: 392px;
+	}
+	&.full-width-header__contact {
+		background: url('../img/headers/contact-header.jpg') center center no-repeat;
+		background-size: cover;
+		margin-bottom: 2.5em;
 	}
 }

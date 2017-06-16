@@ -294,3 +294,17 @@ a.button.large {
 .white-background {
 	background: #FFFFFF;
 }
+
+/** UTILS **/
+
+.hide-for-mobile {
+	@include media($small-screen-down) {
+		display: none;
+	}
+}
+
+.hide-for-desktop {
+	@include media($small-screen-up) {
+		display: none;
+	}
+}
