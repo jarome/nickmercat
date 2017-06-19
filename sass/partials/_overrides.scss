@@ -35,3 +35,23 @@
 .page-template-page-fullwidth-meetnick .blog-item {
 	margin-bottom: 0;
 }
+
+.owl-carousel {
+	.owl-controls .owl-nav {
+		.owl-prev, .owl-next {
+			height: 46px;
+			position: absolute;
+			text-indent: -9999px;
+		}
+		.owl-prev {
+			left: -100px;
+			top: 131px;
+			background: url('../img/arrow/arrow-left.svg') center center no-repeat;
+		}
+		.owl-next {
+			top: 131px;
+			right: -100px;
+			background: url('../img/arrow/arrow-right.svg') center center no-repeat;
+		}
+	}
+}

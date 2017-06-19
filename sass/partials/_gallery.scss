@@ -1,0 +1,33 @@
+.gallery-page {
+	.gallery-page-hero {
+		background: #FFFFFF;
+		text-align: center;
+	}
+	h4 a {
+		color: #000000;
+	}
+
+	.gallery-list-container {
+		padding-top: 60px;
+		@include display(flex);
+		@include flex-direction(row);
+		.gallery-list-item__thumb {
+			width: 100%;
+			padding-top: 56.25%;
+			position: relative;
+			overflow: hidden;
+			img {
+				position:absolute;
+				top:0;
+				bottom:0;
+				margin:auto;}
+		}
+		.gallery-list-item {
+			flex-basis: 100%;
+			@include media($small-screen-up) {
+				flex-basis: calc(25% - 20px);
+			}
+
+		}
+	}
+}

@@ -1076,6 +1076,21 @@ a.button.large {
 .page-template-page-fullwidth-meetnick .blog-item {
   margin-bottom: 0; }
 
+.owl-carousel .owl-controls .owl-nav .owl-prev, .owl-carousel .owl-controls .owl-nav .owl-next {
+  height: 46px;
+  position: absolute;
+  text-indent: -9999px; }
+
+.owl-carousel .owl-controls .owl-nav .owl-prev {
+  left: -100px;
+  top: 131px;
+  background: url("../img/arrow/arrow-left.svg") center center no-repeat; }
+
+.owl-carousel .owl-controls .owl-nav .owl-next {
+  top: 131px;
+  right: -100px;
+  background: url("../img/arrow/arrow-right.svg") center center no-repeat; }
+
 header.navigation.has-shadow {
   box-shadow: 0 6px 13px rgba(0, 0, 0, 0.3); }
 
@@ -2207,6 +2222,14 @@ footer.footer {
     background: url("../img/headers/contact-header.jpg") center center no-repeat;
     background-size: cover;
     margin-bottom: 2.5em; }
+  .full-width-header.full-width-header__schedule {
+    background: url("../img/headers/schedule-header.jpg") center center no-repeat;
+    background-size: cover;
+    margin-bottom: 2.5em; }
+  .full-width-header.full-width-header__gallery {
+    background: url("../img/headers/gallery-header.jpg") center center no-repeat;
+    background-size: cover;
+    margin-bottom: 0; }
 
 /* sidebar widgets */
 aside.sidebar {
@@ -2432,6 +2455,262 @@ aside.sidebar .widget-wrapper {
   .career-stats ul.career-stats__table .career-stats__value {
     display: table-cell;
     font-size: 0.875rem; }
+
+.gallery-page .gallery-page-hero {
+  background: #FFFFFF;
+  text-align: center; }
+
+.gallery-page h4 a {
+  color: #000000; }
+
+.gallery-page .gallery-list-container {
+  padding-top: 60px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row; }
+  .gallery-page .gallery-list-container .gallery-list-item__thumb {
+    width: 100%;
+    padding-top: 56.25%;
+    position: relative;
+    overflow: hidden; }
+    .gallery-page .gallery-list-container .gallery-list-item__thumb img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto; }
+  .gallery-page .gallery-list-container .gallery-list-item {
+    flex-basis: 100%; }
+    @media screen and (min-width: 768px) {
+      .gallery-page .gallery-list-container .gallery-list-item {
+        flex-basis: calc(25% - 20px); } }
+
+.schedule-template-default .blog-single {
+  padding-bottom: 0; }
+
+.schedule-page-hero {
+  background: #E6E6E6; }
+
+.schedule-content {
+  padding-top: 6em;
+  padding-bottom: 6em;
+  text-align: center;
+  background: #FFFFFF;
+  letter-spacing: 4px; }
+  .schedule-content h3.schedule-content__title {
+    font-size: 2.125rem;
+    line-height: 40px; }
+  .schedule-content .schedule-content__description, .schedule-content .schedule-content__period {
+    font-size: 1.25rem;
+    clear: both;
+    display: block;
+    margin-top: 20px;
+    text-transform: uppercase; }
+  .schedule-content .schedule-content__event-number {
+    font-size: 1.125rem;
+    color: #DB0000;
+    text-transform: uppercase; }
+
+.circuit-detail {
+  background: url("../img/result/circuit-bg.jpg") center center no-repeat;
+  background-size: cover;
+  padding-top: 6em;
+  padding-bottom: 4em;
+  color: #FFFFFF; }
+  .circuit-detail .circuit-detail__description {
+    margin-bottom: 50px; }
+    .circuit-detail .circuit-detail__description p {
+      color: #FFFFFF; }
+  .circuit-detail .circuit-detail-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-direction: row; }
+    @media screen and (max-width: 768px) {
+      .circuit-detail .circuit-detail-container {
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        box-direction: normal;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-direction: column; } }
+    .circuit-detail .circuit-detail-container .circuit-detail__col {
+      padding: 0 30px;
+      margin-bottom: 50px;
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 50%;
+      -moz-flex: 0 0 50%;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%; }
+      @media screen and (min-width: 768px) {
+        .circuit-detail .circuit-detail-container .circuit-detail__col:first-child {
+          border-right: 1px solid #FFFFFF;
+          margin-bottom: 0; } }
+    .circuit-detail .circuit-detail-container .circuit-detail__track-outline {
+      width: 85%;
+      margin: 0 auto 40px auto; }
+      .circuit-detail .circuit-detail-container .circuit-detail__track-outline img {
+        width: 100%; }
+  .circuit-detail .circuit-detail__results {
+    color: #FFFFFF;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .circuit-detail .circuit-detail__results .circuit-detail__result {
+      background: #000000;
+      width: 60px;
+      height: 60px;
+      margin: 4px;
+      text-align: center; }
+    .circuit-detail .circuit-detail__results .circuit-detail__result-placement {
+      font-weight: bold;
+      font-family: "Bebas Regular", "Impact", sans-serif;
+      font-size: 2.75rem;
+      position: relative;
+      top: 5px; }
+    .circuit-detail .circuit-detail__results .circuit-detail__result-label {
+      font-size: 0.625rem; }
+    .circuit-detail .circuit-detail__results .circuit-detail__mini-text {
+      font-size: 0.875rem;
+      position: relative;
+      top: -21px; }
+  .circuit-detail ul.circuit-detail__table li {
+    width: 100%;
+    clear: both;
+    display: table;
+    margin: 0 0 20px 0; }
+  .circuit-detail ul.circuit-detail__table .circuit-detail__key {
+    width: 88px;
+    display: table-cell;
+    color: #000000;
+    font-size: 0.625rem;
+    text-transform: uppercase; }
+  .circuit-detail ul.circuit-detail__table .circuit-detail__value {
+    display: table-cell;
+    font-size: 0.875rem;
+    color: #FFFFFF; }
+
+.schedule-page {
+  padding: 6em 0 0 0; }
+  .schedule-page .container {
+    max-width: 900px; }
+
+.schedule-carousel .owl-item {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.schedule-carousel .schedule-carousel__thumb {
+  width: 100%;
+  padding-top: 66.66%;
+  position: relative;
+  overflow: hidden; }
+  .schedule-carousel .schedule-carousel__thumb .schedule-carousel__thumb-overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #FFFFFF;
+    opacity: 0.4; }
+    .schedule-carousel .schedule-carousel__thumb .schedule-carousel__thumb-overlay.schedule-carousel__thumb-overlay-previous {
+      background: #000000; }
+    .schedule-carousel .schedule-carousel__thumb .schedule-carousel__thumb-overlay.schedule-carousel__thumb-overlay-current {
+      background: #DB0000; }
+  .schedule-carousel .schedule-carousel__thumb img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto; }
+  .schedule-carousel .schedule-carousel__thumb .schedule-carousel__track-outline {
+    position: absolute;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+    .schedule-carousel .schedule-carousel__thumb .schedule-carousel__track-outline img {
+      position: relative;
+      width: 70%; }
+
+.schedule-carousel .schedule-carousel__information {
+  text-align: center;
+  background: #FFFFFF;
+  color: #000000;
+  position: relative;
+  min-height: 150px;
+  padding: 20px 20px 0 20px; }
+  .schedule-carousel .schedule-carousel__information h4.post-title {
+    font-size: 1.125rem;
+    line-height: 21px;
+    font-weight: normal;
+    margin-top: 7px;
+    min-height: 63px; }
+    .schedule-carousel .schedule-carousel__information h4.post-title a {
+      color: #000000; }
+  .schedule-carousel .schedule-carousel__information.schedule-carousel__information-previous {
+    background: #000000;
+    color: #FFFFFF; }
+    .schedule-carousel .schedule-carousel__information.schedule-carousel__information-previous h4.post-title a {
+      color: #FFFFFF; }
+  .schedule-carousel .schedule-carousel__information.schedule-carousel__information-current {
+    border-bottom: 5px #DB0000 solid; }
+  .schedule-carousel .schedule-carousel__information .event-number {
+    color: #DB0000;
+    font-size: 0.75rem;
+    text-transform: uppercase; }
 
 /* ====================
 14. USER CUSTOMISATION 

@@ -146,9 +146,33 @@
 			console.log( e.message );
 		}
 
+		// Results Behaviours
+
+    var $circuitDetailResultsEl = $('.js-circuit-detail-result');
+
+    $circuitDetailResultsEl.each(function() {
+
+    	var $this = $(this);
+			var $currentPlacement = $this.find('.circuit-detail__result-placement');
+      var currentPlacementText = $currentPlacement.text();
+
+      var lastCharacters = currentPlacementText.slice(-2);
+      var initialCharacters = currentPlacementText.slice(0,-2);
+
+      $currentPlacement.html(initialCharacters + '<span class="circuit-detail__mini-text">' + lastCharacters + '</span>' );
+
+		});
+
 		// RESPONSIVE VIDEOS - FITVIDS
 
 		// OWL CAROUSEL SLIDERS
+
+		var $blockTeasersEl = $(".block-blog-teasers");
+		var showNav;
+
+		if($blockTeasersEl.data('show-nav') !== undefined) {
+			showNav = true;
+    }
 
 		try {
 			$("#showcase-slider, #quote-slider").owlCarousel({
@@ -163,9 +187,10 @@
 		}
 
 		try {
-			$(".block-blog-teasers").owlCarousel({
+      $blockTeasersEl.owlCarousel({
 				items : 1, 
 				video : true,
+				nav : showNav,
 				autoplay : true,
 				autoplayTimeout : 4000,
 				autoplayHoverPause : true,

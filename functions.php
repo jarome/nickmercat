@@ -133,6 +133,31 @@ if( !function_exists( 'neat_after_setup_theme' ) ){
 	add_action('after_setup_theme', 'neat_after_setup_theme');
 }
 
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+    register_post_type( 'gallery',
+        array(
+            'labels' => array(
+                'name' => __( 'Gallery' ),
+                'singular_name' => __( 'Gallery' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+        )
+    );
+    register_post_type( 'schedule',
+        array(
+            'labels' => array(
+                'name' => __( 'Schedule' ),
+                'singular_name' => __( 'Schedule' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array('title')
+        )
+    );
+}
+
 if( !function_exists( 'neat_enqueue_scripts' ) ){
 	/**
 	 * Loading the JS/CSS.

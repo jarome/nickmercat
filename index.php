@@ -3,7 +3,7 @@ $bloglayout	=	neat_get_blog_layout();
 ?>
 <div class="blog-single">
 	<div class="container">
-		<?php 
+		<?php
 		/**
 		 * neat_page_heading action.
 		 * hooked neat_page_heading, 10
@@ -12,7 +12,7 @@ $bloglayout	=	neat_get_blog_layout();
 		?>
 		<?php if( $bloglayout == 'l_sidebar' ):?><?php get_sidebar();?><?php endif;?>
 		<div class="main-column" id="content">
-			<?php 
+			<?php
 				// get the post.
 				if( have_posts() ):
 					// loop the post.
@@ -23,12 +23,12 @@ $bloglayout	=	neat_get_blog_layout();
 					 * neat_pagination action.
 					 * hooked neat_pagination, 10
 					 */
-					do_action( 'neat_pagination' );					
+					do_action( 'neat_pagination' );
 				else:
 					// nothing found.
 					get_template_part( 'content', 'none' );
 				endif;
-			?>		 
+			?>
 		</div>
 		<?php if( $bloglayout == 'r_sidebar' ):?><?php get_sidebar();?><?php endif;?>
 	</div>

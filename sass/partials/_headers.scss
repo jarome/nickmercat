@@ -26,4 +26,14 @@
 		background-size: cover;
 		margin-bottom: 2.5em;
 	}
+	&.full-width-header__schedule {
+		background: url('../img/headers/schedule-header.jpg') center center no-repeat;
+		background-size: cover;
+		margin-bottom: 2.5em;
+	}
+	&.full-width-header__gallery {
+		background: url('../img/headers/gallery-header.jpg') center center no-repeat;
+		background-size: cover;
+		margin-bottom: 0;
+	}
 }
