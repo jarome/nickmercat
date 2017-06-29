@@ -2481,7 +2481,14 @@ aside.sidebar .widget-wrapper {
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   flex-direction: row;
-  -ms-flex-direction: row; }
+  -ms-flex-direction: row;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
   .gallery-page .gallery-list-container .gallery-list-item__thumb {
     width: 100%;
     padding-top: 56.25%;
@@ -2493,10 +2500,40 @@ aside.sidebar .widget-wrapper {
       bottom: 0;
       margin: auto; }
   .gallery-page .gallery-list-container .gallery-list-item {
-    flex-basis: 100%; }
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px; }
+    @media screen and (max-width: 768px) {
+      .gallery-page .gallery-list-container .gallery-list-item {
+        -webkit-flex-basis: 100%;
+        -moz-flex-basis: 100%;
+        flex-basis: 100%;
+        -ms-flex-preferred-size: 100%; } }
     @media screen and (min-width: 768px) {
       .gallery-page .gallery-list-container .gallery-list-item {
-        flex-basis: calc(25% - 20px); } }
+        -webkit-flex-basis: calc(25% - 20px);
+        -moz-flex-basis: calc(25% - 20px);
+        flex-basis: calc(25% - 20px);
+        -ms-flex-preferred-size: calc(25% - 20px); } }
+  .gallery-page .gallery-list-container .gallery-list-item__teaser {
+    padding: 1.5em;
+    background: #FFFFFF; }
+    .gallery-page .gallery-list-container .gallery-list-item__teaser h4 {
+      font-weight: normal;
+      margin: 0; }
+    .gallery-page .gallery-list-container .gallery-list-item__teaser .meta {
+      margin-bottom: 5px;
+      color: #DB0000;
+      padding: 0 0 .5em 0;
+      font-size: 0.875rem;
+      font-weight: normal; }
+      .gallery-page .gallery-list-container .gallery-list-item__teaser .meta i {
+        color: #b3b3b3;
+        margin-right: 7px; }
+      .gallery-page .gallery-list-container .gallery-list-item__teaser .meta span {
+        display: inline-block;
+        margin: 0.2em;
+        margin-right: 20px; }
 
 .schedule-template-default .blog-single {
   padding-bottom: 0; }
@@ -2527,6 +2564,7 @@ aside.sidebar .widget-wrapper {
 .circuit-detail {
   background: url("../img/result/circuit-bg.jpg") center center no-repeat;
   background-size: cover;
+  position: relative;
   padding-top: 6em;
   padding-bottom: 4em;
   color: #FFFFFF; }
@@ -2711,6 +2749,41 @@ aside.sidebar .widget-wrapper {
     color: #DB0000;
     font-size: 0.75rem;
     text-transform: uppercase; }
+
+.countdown-clock {
+  width: 270px;
+  height: 60px;
+  background: #000000;
+  position: absolute;
+  left: 50%;
+  margin-left: -135px;
+  top: -30px; }
+  .countdown-clock .countdown-clock__timer {
+    display: table;
+    margin: 0 auto; }
+  .countdown-clock .countdown-clock__labels {
+    position: relative;
+    top: -9px; }
+    .countdown-clock .countdown-clock__labels .countdown-clock__label {
+      font-size: 0.625rem;
+      letter-spacing: 1px;
+      line-height: 12px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-left: 30px; }
+      .countdown-clock .countdown-clock__labels .countdown-clock__label:nth-child(3) {
+        margin-left: 25px; }
+      .countdown-clock .countdown-clock__labels .countdown-clock__label:last-child {
+        margin-left: 27px; }
+  .countdown-clock .countdown-clock__date {
+    font-weight: bold;
+    display: inline-block;
+    font-family: "Bebas Regular", "Impact", sans-serif;
+    font-size: 2.75rem;
+    line-height: 2.75rem;
+    letter-spacing: 0;
+    clear: both;
+    margin: 6px 12px 0 12px; }
 
 /* ====================
 14. USER CUSTOMISATION 

@@ -97,6 +97,27 @@ $bloglayout	=	neat_get_blog_layout();
 
 
       <div class="circuit-detail">
+        <!-- START Countdown Component -->
+        <?php
+        $eventdate = get_field('time_of_event'); // Pull your value
+        $eventdatetime = strtotime( $eventdate );
+        ?>
+        <div id="js-countdown-clock" class="countdown-clock" data-eventtime="<?php echo $eventdate ?>">
+          <div class="countdown-clock__timer">
+            <span class="countdown-clock__date">000</span>
+            <span class="countdown-clock__date">00</span>
+            <span class="countdown-clock__date">00</span>
+            <span class="countdown-clock__date">00</span>
+          </div>
+          <div class="countdown-clock__labels">
+            <span class="countdown-clock__label">Days</span>
+            <span class="countdown-clock__label">Hours</span>
+            <span class="countdown-clock__label">Mins</span>
+            <span class="countdown-clock__label">Secs</span>
+          </div>
+        </div>
+        <!-- END Countdown Component -->
+
         <div class="container">
 
           <div class="circuit-detail-container">

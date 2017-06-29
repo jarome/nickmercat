@@ -80,7 +80,14 @@ $bloglayout	=	neat_get_blog_layout();
                       <img src="<?php echo $image['url']; ?>" />
                     </div>
 
-                    <h4><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
+                    <div class="gallery-list-item__teaser">
+                      <div class="meta">
+
+                        <span class="date"><i class="fa fa-clock-o"></i><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></span>
+                      </div>
+                      <h4><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
+
+                    </div>
 
                   </div>
                   <?php
