@@ -220,7 +220,6 @@
 		var countdownClockEventDate = countdownClockEl.data('eventtime');
 		var countdownClockEventTime = new Date(countdownClockEventDate).getTime();
 
-
 		// Update the count down every 1 second
     var x = setInterval(function() {
 

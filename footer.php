@@ -1,4 +1,207 @@
 		<!-- ///// FOOTER ///// -->
+    <?php if (is_front_page()) : ?>
+
+    <section class="schedule-information-section">
+      <div class="circuit-detail circuit-detail-homepage">
+        
+        <div class="container">
+
+          <div class="circuit-detail-container">
+            <div class="circuit-detail__col">
+
+            <div class="circuit-detail-homepage__logo-overlay"></div>
+
+
+            <?php
+            // find date time now
+            $date_now = date('Y-m-d H:i:s');
+
+            // query events
+            $latestresult = get_posts(array(
+                'posts_per_page'	=> 1,
+                'post_type'			=> 'schedule',
+                'meta_query' 		=> array(
+                    array(
+                        'key'			=> 'time_of_event',
+                        'compare'		=> '<',
+                        'value'			=> $date_now,
+                        'type'			=> 'DATETIME'
+                    )),
+                'order'				=> 'ASC',
+                'orderby'			=> 'meta_value',
+                'meta_key'			=> 'time_of_event',
+                'meta_type'			=> 'DATE'
+            ));
+
+
+            if( $latestresult ): ?>
+
+            <?php foreach( $latestresult as $r ): ?>
+
+            <?php
+            $date = get_field('time_of_event', $r->ID); // Pull your value
+            $datetime = strtotime( $date ); // Convert to + seconds since unix epoch
+            $date_now = date('Y-m-d H:i:s');
+            $time_now = strtotime( $date_now ); // Convert today -1 day to seconds since unix epoch
+            if ( $datetime < $time_now ) { // if date value pulled is today or later, we're overdue
+                $eventcompleted = true;
+            } else {
+                $eventcompleted = false;
+            }
+            ?>
+
+              <div class="circuit-detail__information">
+
+                <h2 class="dual-size">
+                  Latest<span class="dual-size__large">Result</span>
+                </h2>
+
+                <h4 class="post-title"><?php echo $r->post_title; ?></h4>
+
+                <div class="circuit-detail__description"><?php the_field('circuit_description', $r->ID) ?></div>
+
+                <div class="meta"><?php the_field('event_period', $r->ID); ?></div>
+
+                <?php if( have_rows('circuit_results', $r->ID)): ?>
+
+                  <div class="circuit-detail__results">
+                    <?php while( have_rows('circuit_results', $r->ID) ): the_row();
+                        $circuitresultslabel = get_sub_field('circuit_result_label', $r->ID);
+                        $circuitresultplacement = get_sub_field('circuit_result_placement', $r->ID);
+                        ?>
+
+                      <div class="circuit-detail__result js-circuit-detail-result">
+                        <div class="circuit-detail__result-placement"><?php echo $circuitresultplacement; ?></div>
+                        <div class="circuit-detail__result-label"><?php echo $circuitresultslabel; ?></div>
+                      </div>
+
+                    <?php endwhile; ?>
+                  </div>
+
+                <?php endif; ?>
+
+              </div>
+
+            <?php endforeach; ?>
+
+            <?php endif; ?>
+            </div>
+
+            <div class="circuit-detail__col">
+
+              <?php
+
+              // query events
+              $upcomingposts = get_posts(array(
+                  'posts_per_page'	=> 1,
+                  'post_type'			=> 'schedule',
+                  'meta_query' 		=> array(
+                      array(
+                          'key'			=> 'time_of_event',
+                          'compare'		=> '>=',
+                          'value'			=> $date_now,
+                          'type'			=> 'DATETIME'
+                      )),
+                  'order'				=> 'ASC',
+                  'orderby'			=> 'meta_value',
+                  'meta_key'			=> 'time_of_event',
+                  'meta_type'			=> 'DATE'
+              ));
+
+              // query events order
+
+              $loop_counter = 1;
+
+              if( $upcomingposts ): ?>
+
+
+              <?php foreach( $upcomingposts as $p ): ?>
+
+              <?php
+              $upcomingdate = get_field('time_of_event', $p->ID); // Pull your value
+              $upcomingdatetime = strtotime( $date ); // Convert to + seconds since unix epoch
+              $upcomingdate_now = date('Y-m-d H:i:s');
+              $upcomingtime_now = strtotime( $date_now ); // Convert today -1 day to seconds since unix epoch
+              if ( $upcomingdatetime < $upcomingtime_now ) { // if date value pulled is today or later, we're overdue
+                  $eventcompleted = true;
+              } else {
+                  $eventcompleted = false;
+              }
+              ?>
+
+
+              <div class="circuit-detail__information">
+
+
+                <h2 class="dual-size">
+                  Next<span class="dual-size__large">Race</span>
+                </h2>
+
+                <h4 class="post-title"><?php echo $p->post_title; ?></h4>
+
+                <div class="circuit-detail__description"><?php the_field('circuit_description', $p->ID) ?></div>
+
+                <div class="meta"><?php the_field('event_period', $p->ID); ?></div>
+
+                  <?php if( have_rows('circuit_stats', $p->ID) ): ?>
+
+                  <ul class="circuit-detail__table">
+                    <?php while( have_rows('circuit_stats', $p->ID) ): the_row();
+                        $circuitstatskey = get_sub_field('stat_type', $p->ID);
+                        $circuitstatslabel = get_sub_field('stat_value', $p->ID);
+                        ?>
+
+                      <li>
+                        <div class="circuit-detail__key"><?php echo $circuitstatskey; ?></div>
+                        <div class="circuit-detail__value"><?php echo $circuitstatslabel; ?></div>
+                      </li>
+
+                    <?php endwhile; ?>
+                  </ul>
+
+                  <?php endif; ?>
+
+                  <!-- START Countdown Component -->
+                  <?php
+
+                  $eventdate = get_field('time_of_event', $p->ID); // Pull your value
+
+                  ?>
+
+                  <div id="js-countdown-clock" class="countdown-clock" data-eventtime="<?php echo $eventdate ?>">
+                    <div class="countdown-clock__timer">
+                      <span class="countdown-clock__date">000</span>
+                      <span class="countdown-clock__date">00</span>
+                      <span class="countdown-clock__date">00</span>
+                      <span class="countdown-clock__date">00</span>
+                    </div>
+                    <div class="countdown-clock__labels">
+                      <span class="countdown-clock__label">Days</span>
+                      <span class="countdown-clock__label">Hours</span>
+                      <span class="countdown-clock__label">Mins</span>
+                      <span class="countdown-clock__label">Secs</span>
+                    </div>
+                  </div>
+                  <!-- END Countdown Component -->
+                </div>
+
+
+                <?php endforeach; ?>
+
+              <?php endif; ?>
+              
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+    </section>
+
+    <?php endif; ?>
 
     <section class="partners">
       <h2>Partners</h2>

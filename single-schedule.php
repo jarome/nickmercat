@@ -100,7 +100,6 @@ $bloglayout	=	neat_get_blog_layout();
         <!-- START Countdown Component -->
         <?php
         $eventdate = get_field('time_of_event'); // Pull your value
-        $eventdatetime = strtotime( $eventdate );
         ?>
         <div id="js-countdown-clock" class="countdown-clock" data-eventtime="<?php echo $eventdate ?>">
           <div class="countdown-clock__timer">
