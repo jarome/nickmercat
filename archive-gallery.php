@@ -22,7 +22,7 @@ $bloglayout	=	neat_get_blog_layout();
             $args	=	array(
               'post_type'		=>	'gallery',
               'post_status'	=>	'publish',
-              'posts_per_page' => 4
+              'posts_per_page' => 1
             );
             query_posts( apply_filters( 'neat_blogpage_args' , $args) );
             if( have_posts() ):
@@ -31,7 +31,9 @@ $bloglayout	=	neat_get_blog_layout();
                 ?>
                 <div <?php post_class();?>>
                   <div class="blog-teaser">
+                    <section class="vc_row wpb_row vc_row-fluid">
                     <?php the_content();?>
+                    </section>
                   </div>
                 </div>
 
@@ -44,13 +46,6 @@ $bloglayout	=	neat_get_blog_layout();
               // nothing found.
               get_template_part( 'content', 'none' );
             endif;
-          ?>
-          <?php
-          /**
-           * neat_pagination action.
-           * hooked neat_pagination, 10
-           */
-          do_action( 'neat_pagination' );
           ?>
         </div>
 
@@ -66,7 +61,8 @@ $bloglayout	=	neat_get_blog_layout();
           $more = 0;
           $args	=	array(
               'post_type'		=>	'gallery',
-              'post_status'	=>	'publish'
+              'post_status'	=>	'publish',
+              'posts_per_page' => -1
           );
           query_posts( apply_filters( 'neat_blogpage_args' , $args) );
           if( have_posts() ):
@@ -77,7 +73,7 @@ $bloglayout	=	neat_get_blog_layout();
                   <div class="gallery-list-item">
                       <?php $image = get_field('gallery_thumbnail'); ?>
                     <div class="gallery-list-item__thumb">
-                      <img src="<?php echo $image['url']; ?>" />
+                      <a href="<?php the_permalink();?>"><img src="<?php echo $image['url']; ?>" /></a>
                     </div>
 
                     <div class="gallery-list-item__teaser">
@@ -96,13 +92,6 @@ $bloglayout	=	neat_get_blog_layout();
               // nothing found.
               get_template_part( 'content', 'none' );
           endif;
-          ?>
-          <?php
-          /**
-           * neat_pagination action.
-           * hooked neat_pagination, 10
-           */
-          do_action( 'neat_pagination' );
           ?>
         </div>
       </div>

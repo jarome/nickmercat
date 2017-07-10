@@ -280,11 +280,6 @@ header.navigation li.more.nav-link > ul > li > a:after {
 header.navigation ul.submenu .submenu { 
  left: 14em; 
 }
-#navigation-menu li{
-	line-height:0px;
-	padding-left: 0px;
-	padding-right: 30px
-}
 
 header.navigation.headroom ul#navigation-menu {
     margin-top: 0;

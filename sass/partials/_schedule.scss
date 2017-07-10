@@ -54,6 +54,7 @@ $schedule-carousel-padding: 15px;
 
 		h4 {
 			font-weight: normal;
+			letter-spacing: 4px;
 		}
 		.circuit-detail__description {
 			margin-bottom: 15px;
@@ -88,6 +89,7 @@ $schedule-carousel-padding: 15px;
 		.circuit-detail-container .circuit-detail__col .circuit-detail__information {
 			z-index: 2;
 			position: relative;
+			padding: 0 60px;
 		}
 
 		.circuit-detail-container .circuit-detail__col:first-child {
@@ -121,6 +123,15 @@ $schedule-carousel-padding: 15px;
 				left: 50%;
 				margin-left: -46px;
 			}
+		}
+
+		.schedule-content__description, .meta {
+			font-size: rem(14px);
+			text-transform: uppercase;
+			letter-spacing: 4px;
+		}
+		.schedule-content__description {
+			margin-bottom: 15px;
 		}
 	}
 

@@ -16,7 +16,7 @@ header.navigation {
 
 	$navigation-padding: 1em;
 	$navigation-background: darken(white, 5%);
-	$navigation-color: $base-primary-color;
+	$navigation-color: #FFFFFF;
 	$navigation-color-hover: $highlight;
 	$navigation-height: 6em;
 	$horizontal-bar-mode: $medium-screen;
@@ -43,14 +43,14 @@ header.navigation {
 
 	  	.logo {
 		    float: left;
-				background: url('../img/Logo_icon.svg') center center no-repeat;
+				background: url('../img/Logo_header_HOZ.svg') center center no-repeat;
 		    max-height: $navigation-height;
-		    padding-left: $navigation-padding;
+		    margin-left: $navigation-padding;
 		    padding-right: 2em;
 				background-size: contain;
 				height: 64px;
-        width: 148px;
-				margin-top: 16px;
+        width: 192px;
+				margin-top: 19px;
 				&.invert-logo {
 					background: url('../img/Logo_icon_white.svg') center center no-repeat;
 					background-size: contain;
@@ -66,7 +66,7 @@ header.navigation {
 		// MOBILE VIEW
 
 	  	.navigation-menu-button {
-		    color: $navigation-color;
+		    color: #000000;
 		    display: block;
 		    float: right;
 		    font-family: 'Montserrat', sans-serif;
@@ -77,7 +77,7 @@ header.navigation {
 		    padding-right: 1em;
 		    text-transform: uppercase;
 
-	    	@include media ($horizontal-bar-mode) {
+	    	@include media ($small-screen-up) {
 	     		display: none;
 	    	}
 
@@ -97,7 +97,7 @@ header.navigation {
 				}
 
 
-	    	@include media ($horizontal-bar-mode) {
+	    	@include media ($small-screen-up) {
 	      		float: right;
 	    	}
 	  	}
@@ -113,11 +113,13 @@ header.navigation {
 		    width: 100%;
 		    z-index: 9999;
 
-	    	@include media ($horizontal-bar-mode) {
+	    	@include media ($small-screen-up) {
 				display: inline;
 				margin: 0;
 				padding: 0;
 	    	}
+
+
 	  	}
 
 
@@ -125,27 +127,34 @@ header.navigation {
 
 	  	ul li.nav-link {
 
-	  		@include media($xl-screen-down) {
-	  			padding-left: 0;
-	  		}
+				font-size: rem(14px);
+				letter-spacing: 2px;
+				display: block;
+				line-height: 4em;
+				overflow: hidden;
+				padding-right: 20px;
+				text-align: center;
+				width: 100%;
+				z-index: 9999;
+				padding-left: 0;
+				border-bottom: solid 1px darken($navigation-background, 5%);
 
-	  		@include media($small-screen-down) {
-	  			padding-left: 0;
-	  			text-align: center;
-	  			border-bottom: solid 1px darken($navigation-background, 5%);
-	  		}
+				@include media($xl-screen-down) {
+					padding-left: 0;
+				}
 
-        font-size: rem(14px);
-        letter-spacing: 2px;
-		    display: block;
-		    line-height: 4em;
-		    overflow: hidden;
-		    padding-left: 2em;
-		    text-align: right;
-		    width: 100%;
-		    z-index: 9999;
+				@include media($small-screen-up) {
+					border-bottom: none;
+					padding-left: 20px;
+					text-align: right;
+				}
 
-	    	@include media ($horizontal-bar-mode) {
+				@include media($medium-screen-down) {
+					padding-right: 0;
+					padding-left: 1em;
+				}
+
+	    	@include media ($small-screen-up) {
 				background: transparent;
 				display: inline;
 				line-height: 4em;
@@ -158,31 +167,31 @@ header.navigation {
 	    	}
 
 	    	a {
-				display: inline-block;
+
+				display: block;
         text-decoration: none;
         text-transform: uppercase;
 				font-weight: 400;
-				@include media($small-screen-down) {
+				color: #FFFFFF;
+				@include media($small-screen-up) {
+					color: #000000;
+				}
+
+				@include media ($small-screen-up) {
+					padding-right: 1em;
+				}
+
+				&:hover {
 					color: #FFFFFF;
 				}
-				color: $navigation-color;
 
-	      		@include media ($horizontal-bar-mode) {
-	        		padding-right: 1em;
-	      		}
+				@include media($small-screen-up) {
+					display: inline-block;
+					&:hover {
+						color: $navigation-color-hover;
+					}
 
-
-	      		&:hover {
-	        		color: $navigation-color-hover;
-      			}
-
-      			@include media($small-screen-down) {
-      				display: block;
-							&:hover {
-
-								color: #FFFFFF;
-							}
-      			}
+				}
 	    	}
 	  	}
 	}
@@ -249,7 +258,7 @@ header.navigation {
 		    display: block;
 		}
 
-		@include media($horizontal-bar-mode) {
+		@include media($small-screen-up) {
 		    padding-right: .8em;
 		    position: relative;
 		}
@@ -259,13 +268,13 @@ header.navigation {
 	    display: none;
 	    padding-left: 0;
 
-	    @include media($horizontal-bar-mode) {
+	    @include media($small-screen-up) {
 	      	position: absolute;
 	      	top: 2.5em;
 	    }
 
 	    .submenu {
-	      	@include media($horizontal-bar-mode) {
+	      	@include media($small-screen-up) {
 	        	left: $navigation-submenu-width - .2em;
 	        	top: 0;
 	      	}
@@ -281,7 +290,7 @@ header.navigation {
 				border-bottom: solid 1px darken($navigation-background, 8%);
 			}
 
-	      	@include media($horizontal-bar-mode) {
+	      	@include media($small-screen-up) {
 	        	line-height: 3.5em;
 
 	        	&:first-child > a {
@@ -302,12 +311,12 @@ header.navigation {
 		        text-align: right;
 		        width: 100%;
 
-	        	@include media($horizontal-bar-mode) {
+	        	@include media($small-screen-up) {
 	        		padding: 0;
 	        		text-align: center;
 	        	}
 
-	        	@include media($horizontal-bar-mode) {
+	        	@include media($small-screen-up) {
 					background-color: $navigation-background;
 					padding-left: $navigation-submenu-padding;
 					text-align: left;
@@ -335,12 +344,16 @@ header.navigation {
 .hero-carousel__logo-overlay {
   background: url('../img/Logo_icon_white.svg') center center no-repeat;
   background-size: contain;
-  width: 251px;
-  height: 165px;
+  width: 200px;
+  height: 131px;
   left: 20%;
   position: absolute;
   right: 20%;
   margin: 2em auto 0;
-  bottom: 341px;
-  z-index: 9;
+  top: 50%;
+	margin-top: -65px;
+  z-index: 101;
+	@include media($small-screen-down) {
+		display: none;
+	}
 }

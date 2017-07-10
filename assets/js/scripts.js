@@ -6,7 +6,7 @@
 
     function toggleDeviceState() {
       var windowsize = $(window).innerWidth();
-      if(windowsize > 900) {
+      if(windowsize > 768) {
         $('body').addClass('desktop-site').removeClass('mobile-site');
       } else {
 
@@ -168,6 +168,10 @@
 		// OWL CAROUSEL SLIDERS
 
 		var $blockTeasersEl = $(".block-blog-teasers");
+
+		var $currentScheduledItem = $blockTeasersEl.find('.blog-item-current');
+		var $currentScheduledItemNumber = ($currentScheduledItem.data('blognumber') - 1);
+
 		var showNav;
 
 		if($blockTeasersEl.data('show-nav') !== undefined) {
@@ -188,15 +192,15 @@
 
 		try {
       $blockTeasersEl.owlCarousel({
-				items : 1, 
+				items : 1,
 				video : true,
+        pagination:false,
 				nav : showNav,
-				autoplay : true,
 				autoplayTimeout : 4000,
 				autoplayHoverPause : true,
 				responsive : {
 			        480 : {
-								items : 1,
+								items : 1
 			        },
 			        767 : {
 								items : 2
@@ -212,40 +216,56 @@
 			console.log( e.message );
 		}
 
+    //$blockTeasersEl.trigger('next.owl.carousel');
+		if($currentScheduledItemNumber) {
+      $blockTeasersEl.trigger('to.owl.carousel', [$currentScheduledItemNumber, 0, true]);
+    }
+
 		// Countdown Clock
 
     // Set the date we're counting down to
 
 		var countdownClockEl = $('#js-countdown-clock');
-		var countdownClockEventDate = countdownClockEl.data('eventtime');
-		var countdownClockEventTime = new Date(countdownClockEventDate).getTime();
 
-		// Update the count down every 1 second
-    var x = setInterval(function() {
+		if(countdownClockEl.length > 0) {
+      var countdownClockEventDate = countdownClockEl.data('eventtime');
+      var countdownClockEventTime = new Date(countdownClockEventDate.replace(/\s/, 'T')).getTime();
 
-      // Get todays date and time
-      var now = new Date().getTime();
+      // Update the count down every 1 second
+      var x = setInterval(function () {
 
-      // Find the distance between now an the count down date
-      var distance = countdownClockEventTime - now;
+        // Get todays date and time
+        var now = new Date().getTime();
 
-      // Time calculations for days, hours, minutes and seconds
-      var days = ("0"+Math.floor(distance / (1000 * 60 * 60 * 24))).slice(-3);
-      var hours = ("0"+Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).slice(-2);
-      var minutes = ("0"+Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).slice(-2);
-      var seconds = ("0"+Math.floor((distance % (1000 * 60)) / 1000)).slice(-2);
+        // Find the distance between now an the count down date
+        var distance = countdownClockEventTime - now;
 
-      // Display the result in the element with id="demo"
-      countdownClockEl.html('<div class="countdown-clock__timer"><span class="countdown-clock__date">' + days + '</span>' + '<span class="countdown-clock__date">' + hours + '</span>' + '<span class="countdown-clock__date">' + minutes + '</span>' + '<span class="countdown-clock__date">' + seconds + '</span></div><div class="countdown-clock__labels"><span class="countdown-clock__label">Days</span><span class="countdown-clock__label">Hours</span><span class="countdown-clock__label">Mins</span><span class="countdown-clock__label">Secs</span></div>');
+        // Time calculations for days, hours, minutes and seconds
+        var days = ("0" + Math.floor(distance / (1000 * 60 * 60 * 24))).slice(-3);
+        var hours = ("0" + Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).slice(-2);
+        var minutes = ("0" + Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).slice(-2);
+        var seconds = ("0" + Math.floor((distance % (1000 * 60)) / 1000)).slice(-2);
 
-      // If the count down is finished, write some text
-      if (distance < 0) {
-        clearInterval(x);
         // Display the result in the element with id="demo"
-        countdownClockEl.html('<div class="countdown-clock__timer"><span class="countdown-clock__date">' + '000' + '</span>' + '<span class="countdown-clock__date">' + '00' + '</span>' + '<span class="countdown-clock__date">' + '00' + '</span>' + '<span class="countdown-clock__date">' + '00' + '</span></div><div class="countdown-clock__labels"><span class="countdown-clock__label">Days</span><span class="countdown-clock__label">Hours</span><span class="countdown-clock__label">Mins</span><span class="countdown-clock__label">Secs</span></div>');
+        countdownClockEl.html('<div class="countdown-clock__timer"><span class="countdown-clock__date">' + days + '</span>' + '<span class="countdown-clock__date">' + hours + '</span>' + '<span class="countdown-clock__date">' + minutes + '</span>' + '<span class="countdown-clock__date">' + seconds + '</span></div><div class="countdown-clock__labels"><span class="countdown-clock__label">Days</span><span class="countdown-clock__label">Hours</span><span class="countdown-clock__label">Mins</span><span class="countdown-clock__label">Secs</span></div>');
 
-      }
-    }, 1000);
+        // If the count down is finished, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          // Display the result in the element with id="demo"
+          countdownClockEl.html('<div class="countdown-clock__timer"><span class="countdown-clock__date">' + '000' + '</span>' + '<span class="countdown-clock__date">' + '00' + '</span>' + '<span class="countdown-clock__date">' + '00' + '</span>' + '<span class="countdown-clock__date">' + '00' + '</span></div><div class="countdown-clock__labels"><span class="countdown-clock__label">Days</span><span class="countdown-clock__label">Hours</span><span class="countdown-clock__label">Mins</span><span class="countdown-clock__label">Secs</span></div>');
+
+        }
+      }, 1000);
+
+    }
+
+    /** Inject logo into carousel **/
+
+    var $carouselScope = $('.home');
+    var $carouselContainer = $carouselScope.find('#section-intro');
+
+    $carouselContainer.append('<div class="hero-carousel__logo-overlay"></div>');
 
 
 		// FLEXSLIDER

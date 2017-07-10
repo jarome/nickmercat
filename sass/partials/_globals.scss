@@ -1,4 +1,14 @@
 /* typography */
+
+*:focus {
+	outline: none;
+}
+
+a:focus {
+	outline: none;
+}
+
+
 body {
 	font-family: 'Montserrat', sans-serif;
 	color: $base-primary-color;
@@ -169,6 +179,9 @@ a.button.large {
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
+	&.inline-button {
+		display: inline-block;
+	}
 
 	&:hover {
 		background-color: $highlight;
@@ -289,6 +302,9 @@ a.button.large {
 	background: url('../img/Logo_icon.svg') center center no-repeat;
 	background-size: contain;
 	margin: 0 auto;
+	@include media($small-screen-down) {
+		margin-top: 30px;
+	}
 }
 
 .white-background {

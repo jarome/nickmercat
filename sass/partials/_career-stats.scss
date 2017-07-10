@@ -7,21 +7,21 @@
 
 	.career-stats__container {
 		@include media($medium-screen-up) {
-			max-width: 358px;
+			max-width: 400px;
 		}
 		margin: 0 auto;
-		padding: 60px 20px 0 20px;
+		padding: 60px 35px 0 35px;
 		@include media($medium-screen-down) {
 			padding: 60px 50px 0 50px;
 		}
 	}
-	.career-stats__col {
-
+	.career-stats-col {
+		padding-bottom: 30px;
 
 	}
 
 	.career-stats__about {
-		width: 35%;
+		flex: 1.5;
 		.career-stats__container {
 			@include media($medium-screen-up) {
 				float: right;
@@ -29,13 +29,20 @@
 		}
 	}
 	.career-stats__facts {
-		width: 30%;
+		flex: 1;
 		background-color: #999999;
+
+		ul.career-stats__table .career-stats__key {
+			color: #FFFFFF;
+		}
 	}
 
 	.career-stats__stats {
-		width: 35%;
+		flex: 1.5;
 		background-color: #4d4d4d;
+		.accent {
+			color: #AAAAAA;
+		}
 		.career-stats__container {
 			@include media($medium-screen-up) {
 				float: left;

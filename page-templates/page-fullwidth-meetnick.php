@@ -36,7 +36,7 @@
 				
 				endif;?>
     <div class="career-stats">
-      <div class="carrer-stats-col career-stats__about">
+      <div class="career-stats-col career-stats__about">
         <div class="career-stats__container">
           <h2 class="dual-size">
             Nick<span class="dual-size__large">Percat</span>
@@ -76,7 +76,7 @@
           </ul>
         </div>
       </div>
-      <div class="carrer-stats-col career-stats__facts">
+      <div class="career-stats-col career-stats__facts">
         <div class="career-stats__container">
           <h2 class="dual-size">
             Fun<span class="dual-size__large">Facts</span>
@@ -124,7 +124,7 @@
           </ul>
         </div>
       </div>
-      <div class="carrer-stats-col career-stats__stats">
+      <div class="career-stats-col career-stats__stats">
         <div class="career-stats__container">
           <h2 class="dual-size">
             Career<span class="dual-size__large">Stats</span>

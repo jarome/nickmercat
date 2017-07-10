@@ -8,6 +8,13 @@ section.intro {
 	color: white;
 	text-transform: uppercase;
 
+	padding-top: 6em;
+
+	.container, .container-small {
+		@include media($medium-screen-down) {
+			@include pad(0 3% 0 3%);
+		}
+	}
 	.container {
 
 			position: relative;
@@ -16,7 +23,7 @@ section.intro {
 		}
 
 		@include media($small-screen-down) {
-			padding-top: 8em;
+
 		}
 	}
 
@@ -27,7 +34,7 @@ section.intro {
 
 		img {
 		    max-width: 50%;
-		}	
+		}
 	}
 
 	h3 {
@@ -49,7 +56,7 @@ section.intro {
 		i {
 			color: white;
 			opacity: 0.5;
-			font-size: 3.5em;	
+			font-size: 3.5em;
 			text-align: center;
 			transition: opacity 0.2s;
 

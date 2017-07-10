@@ -27,7 +27,7 @@
                         'value'			=> $date_now,
                         'type'			=> 'DATETIME'
                     )),
-                'order'				=> 'ASC',
+                'order'				=> 'DESC',
                 'orderby'			=> 'meta_value',
                 'meta_key'			=> 'time_of_event',
                 'meta_type'			=> 'DATE'
@@ -58,7 +58,7 @@
 
                 <h4 class="post-title"><?php echo $r->post_title; ?></h4>
 
-                <div class="circuit-detail__description"><?php the_field('circuit_description', $r->ID) ?></div>
+                <div class="schedule-content__description"><?php the_field('event_description', $r->ID) ?></div>
 
                 <div class="meta"><?php the_field('event_period', $r->ID); ?></div>
 
@@ -139,27 +139,9 @@
 
                 <h4 class="post-title"><?php echo $p->post_title; ?></h4>
 
-                <div class="circuit-detail__description"><?php the_field('circuit_description', $p->ID) ?></div>
+                <div class="schedule-content__description"><?php the_field('event_description', $p->ID) ?></div>
 
                 <div class="meta"><?php the_field('event_period', $p->ID); ?></div>
-
-                  <?php if( have_rows('circuit_stats', $p->ID) ): ?>
-
-                  <ul class="circuit-detail__table">
-                    <?php while( have_rows('circuit_stats', $p->ID) ): the_row();
-                        $circuitstatskey = get_sub_field('stat_type', $p->ID);
-                        $circuitstatslabel = get_sub_field('stat_value', $p->ID);
-                        ?>
-
-                      <li>
-                        <div class="circuit-detail__key"><?php echo $circuitstatskey; ?></div>
-                        <div class="circuit-detail__value"><?php echo $circuitstatslabel; ?></div>
-                      </li>
-
-                    <?php endwhile; ?>
-                  </ul>
-
-                  <?php endif; ?>
 
                   <!-- START Countdown Component -->
                   <?php
@@ -207,19 +189,19 @@
       <h2>Partners</h2>
       <ul class="partners__partner-list">
         <li>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/luckydesign.png" width="185" alt="">
+          <a href="http://www.luckydesign.it/en/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/luckydesign.png" width="185" alt=""></a>
         </li>
         <li>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/coatshire.png" width="171" alt="">
+          <a href="https://www.coateshire.com.au/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/coatshire.png" width="171" alt=""></a>
         </li>
         <li>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/morris-finance.png" width="187" alt="">
+          <a href="https://www.morrisfinance.com.au/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/morris-finance.png" width="187" alt=""></a>
         </li>
         <li>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/timken.png" width="177" alt="">
+          <a href="https://www.timken.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/timken.png" width="177" alt=""></a>
         </li>
         <li>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/arai.png" width="187" alt="">
+          <a href="http://www.araihelmets.net.au/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/arai.png" width="187" alt=""></a>
         </li>
       </ul>
     </section>
@@ -228,13 +210,13 @@
 			  <div class="footer-logo"></div>
 			  <ul class="footer-social-links">
           <li>
-            <a class="footer-social-links__item footer-social-links__instagram">Instagram</a>
+            <a class="footer-social-links__item footer-social-links__instagram" href="https://www.instagram.com/nickpercat/">Instagram</a>
           </li>
           <li>
-            <a class="footer-social-links__item footer-social-links__twitter">Twitter</a>
+            <a class="footer-social-links__item footer-social-links__twitter" href="https://twitter.com/nickpercat">Twitter</a>
           </li>
           <li>
-            <a class="footer-social-links__item footer-social-links__facebook">Facebook</a>
+            <a class="footer-social-links__item footer-social-links__facebook" href="https://www.facebook.com/nickpercat/">Facebook</a>
           </li>
         </ul>
 			</div>
@@ -247,7 +229,7 @@
             <a href="#">Contact</a>
           </li>
           <li>
-            <a href="#">Terms and Privacy</a>
+            <a href="http://sixtwo.com.au/">Site by SIXTWO</a>
           </li>
         </ul>
       </div>

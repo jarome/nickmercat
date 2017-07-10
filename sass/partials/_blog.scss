@@ -2,7 +2,6 @@
 section.blog {
 	background: $base-primary-grey;
 	text-align: center;
-
 	//Used for Homepage
 	#blog-teasers {
 
@@ -35,10 +34,19 @@ section.blog {
 			a.featured-image {
 				display: block;
 
+				width: 100%;
+				padding-top: 75%;
+				position: relative;
+				overflow: hidden;
 				img {
+					position:absolute;
+					top:0;
+					bottom:0;
+					margin:auto;
 					transition: all 0.5s;
 					-webkit-backface-visibility: hidden;
 				}
+
 			}
 
 			.blog-teaser {

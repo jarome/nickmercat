@@ -1,6 +1,9 @@
 
 #section-showcase {
 	padding: 6em 0 5em;
+	@include media($small-screen-down) {
+		padding-top: 0;
+	}
 }
 
 .showcase {

@@ -10,6 +10,52 @@ $bloglayout	=	neat_get_blog_layout();
 
     <div class="full-width-header full-width-header__schedule"><h2>SCHEDULE</h2></div>
 
+    <?php
+
+    $date_now = date('Y-m-d H:i:s');
+
+    // query events
+    $upcomingposts = get_posts(array(
+        'posts_per_page'	=> 1,
+        'post_type'			=> 'schedule',
+        'meta_query' 		=> array(
+            array(
+                'key'			=> 'time_of_event',
+                'compare'		=> '>=',
+                'value'			=> $date_now,
+                'type'			=> 'DATETIME'
+            )),
+        'order'				=> 'ASC',
+        'orderby'			=> 'meta_value',
+        'meta_key'			=> 'time_of_event',
+        'meta_type'			=> 'DATE'
+    ));
+
+    // query events order
+
+    $loop_counter = 1;
+
+    if( $upcomingposts ): ?>
+
+
+    <?php foreach( $upcomingposts as $u ): ?>
+
+
+        <?php
+
+        $current_post_id = $u->ID;
+
+        $upcomingdate = get_field('time_of_event', $u->ID); // Pull your value
+        $upcomingdatetime = strtotime( $date ); // Convert to + seconds since unix epoch
+        $upcomingdate_now = date('Y-m-d H:i:s');
+        $upcomingtime_now = strtotime( $date_now ); // Convert today -1 day to seconds since unix epoch
+        if ( $upcomingdatetime < $upcomingtime_now ) { // if date value pulled is today or later, we're overdue
+            $eventcompleted = true;
+        } else {
+            $eventcompleted = false;
+        }
+        ?>
+
     <div class="schedule-page-hero">
       <div class="container">
 
@@ -26,8 +72,6 @@ $bloglayout	=	neat_get_blog_layout();
                 'meta_key'			=> 'time_of_event',
                 'meta_type'			=> 'DATETIME'
             ));
-
-            $current_post_id = $post->ID;
 
             $loop_counter = 1;
 
@@ -48,7 +92,7 @@ $bloglayout	=	neat_get_blog_layout();
                     }
                     ?>
 
-                <div class="blog-item">
+                  <div class="blog-item<?php if( $current_post_id === $p->ID ) { ?> blog-item-current<?php } ?>" data-blognumber="<?php echo $loop_counter ?>">
 
                   <div class="media">
                     <div class="schedule-carousel__thumb">
@@ -82,115 +126,116 @@ $bloglayout	=	neat_get_blog_layout();
       </div>
     </div>
 
-      <?php if( have_posts() ) : the_post();?>
 
-        <div class="schedule-content">
+    <div class="schedule-content">
 
-          <div class="container">
+      <div class="container">
+
+          <?php  $currentEventIndex = 1; ?>
+
+        <div class="schedule-content__event-number">Event <?php if( $scheduleposts ): ?><?php foreach( $scheduleposts as $s ): ?><?php if( $current_post_id === $s->ID ) { echo $currentEventIndex; } ?><?php $currentEventIndex++; ?><?php endforeach; ?><?php endif; ?></div>
+        <h3 class="schedule-content__title"><?php echo $u->post_title; ?></h3>
+        <span class="schedule-content__description"><?php the_field('event_description', $u->ID) ?></span>
+        <span class="schedule-content__period"><?php the_field('event_period', $u->ID) ?></span>
+
+      </div>
+    </div>
 
 
-              <?php  $currentEventIndex = 1; ?>
+    <div class="circuit-detail">
 
-            <div class="schedule-content__event-number">Event <?php if( $scheduleposts ): ?><?php foreach( $scheduleposts as $p ): ?><?php if( $current_post_id === $p->ID ) { echo $currentEventIndex; } ?><?php $currentEventIndex++; ?><?php endforeach; ?><?php endif; ?></div>
-            <h3 class="schedule-content__title"><?php the_title();?></h3>
-            <span class="schedule-content__description"><?php the_field('event_description') ?></span>
-            <span class="schedule-content__period"><?php the_field('event_period') ?></span>
-
-          </div>
+      <!-- START Countdown Component -->
+        <?php
+        $eventdate = get_field('time_of_event', $u->ID); // Pull your value
+        $eventdatetime = strtotime( $eventdate );
+        ?>
+      <div id="js-countdown-clock" class="countdown-clock" data-eventtime="<?php echo $eventdate ?>">
+        <div class="countdown-clock__timer">
+          <span class="countdown-clock__date">000</span>
+          <span class="countdown-clock__date">00</span>
+          <span class="countdown-clock__date">00</span>
+          <span class="countdown-clock__date">00</span>
         </div>
+        <div class="countdown-clock__labels">
+          <span class="countdown-clock__label">Days</span>
+          <span class="countdown-clock__label">Hours</span>
+          <span class="countdown-clock__label">Mins</span>
+          <span class="countdown-clock__label">Secs</span>
+        </div>
+      </div>
+      <!-- END Countdown Component -->
 
+      <div class="container">
 
-        <div class="circuit-detail">
+        <div class="circuit-detail-container">
+          <div class="circuit-detail__col">
 
-          <!-- START Countdown Component -->
-            <?php
-            $eventdate = get_field('time_of_event'); // Pull your value
-            $eventdatetime = strtotime( $eventdate );
-            ?>
-          <div id="js-countdown-clock" class="countdown-clock" data-eventtime="<?php echo $eventdate ?>">
-            <div class="countdown-clock__timer">
-              <span class="countdown-clock__date">000</span>
-              <span class="countdown-clock__date">00</span>
-              <span class="countdown-clock__date">00</span>
-              <span class="countdown-clock__date">00</span>
-            </div>
-            <div class="countdown-clock__labels">
-              <span class="countdown-clock__label">Days</span>
-              <span class="countdown-clock__label">Hours</span>
-              <span class="countdown-clock__label">Mins</span>
-              <span class="countdown-clock__label">Secs</span>
-            </div>
-          </div>
-          <!-- END Countdown Component -->
+            <h2 class="dual-size">
+              The<span class="dual-size__large">Circuit</span>
+            </h2>
 
+            <div class="circuit-detail__description"><?php the_field('circuit_description', $u->ID) ?></div>
 
-          <div class="container">
-
-            <div class="circuit-detail-container">
-              <div class="circuit-detail__col">
+              <?php if( have_rows('circuit_results', $u->ID) ): ?>
 
                 <h2 class="dual-size">
-                  The<span class="dual-size__large">Circuit</span>
+                    <?php the_field('circuit_results_year', $u->ID) ?><span class="dual-size__large">Results</span>
                 </h2>
 
-                <div class="circuit-detail__description"><?php the_field('circuit_description') ?></div>
+                <div class="circuit-detail__results">
+                    <?php while( have_rows('circuit_results', $u->ID) ): the_row();
+                        $circuitresultslabel = get_sub_field('circuit_result_label', $u->ID);
+                        $circuitresultplacement = get_sub_field('circuit_result_placement', $u->ID);
+                        ?>
 
-                  <?php if( have_rows('circuit_results') ): ?>
+                      <div class="circuit-detail__result js-circuit-detail-result">
+                        <div class="circuit-detail__result-placement"><?php echo $circuitresultplacement; ?></div>
+                        <div class="circuit-detail__result-label"><?php echo $circuitresultslabel; ?></div>
+                      </div>
 
-                    <h2 class="dual-size">
-                        <?php the_field('circuit_results_year') ?><span class="dual-size__large">Results</span>
-                    </h2>
-
-                    <div class="circuit-detail__results">
-                        <?php while( have_rows('circuit_results') ): the_row();
-                            $circuitresultslabel = get_sub_field('circuit_result_label');
-                            $circuitresultplacement = get_sub_field('circuit_result_placement');
-                            ?>
-
-                          <div class="circuit-detail__result js-circuit-detail-result">
-                            <div class="circuit-detail__result-placement"><?php echo $circuitresultplacement; ?></div>
-                            <div class="circuit-detail__result-label"><?php echo $circuitresultslabel; ?></div>
-                          </div>
-
-                        <?php endwhile; ?>
-                    </div>
-                  <?php endif; ?>
-              </div>
-
-              <div class="circuit-detail__col">
-
-                <div class="circuit-detail__track-outline">
-                    <?php $resultscircuit = get_field( "circuit_image" ); ?>
-                  <img src="<?php echo $resultscircuit; ?>" class="" alt="" srcset="" sizes="" />
+                    <?php endwhile; ?>
                 </div>
-                <div class="circuit-detail__information">
-
-                    <?php if( have_rows('circuit_stats') ): ?>
-
-                      <ul class="circuit-detail__table">
-                          <?php while( have_rows('circuit_stats') ): the_row();
-                              $circuitstatskey = get_sub_field('stat_type');
-                              $circuitstatslabel = get_sub_field('stat_value');
-                              ?>
-
-                            <li>
-                              <div class="circuit-detail__key"><?php echo $circuitstatskey; ?></div>
-                              <div class="circuit-detail__value"><?php echo $circuitstatslabel; ?></div>
-                            </li>
-
-                          <?php endwhile; ?>
-                      </ul>
-                    <?php endif; ?>
-
-                </div>
-              </div>
-            </div>
-
+              <?php endif; ?>
           </div>
 
+          <div class="circuit-detail__col">
+
+            <div class="circuit-detail__track-outline">
+                <?php $resultscircuit = get_field( "circuit_image", $u->ID ); ?>
+              <img src="<?php echo $resultscircuit; ?>" class="" alt="" srcset="" sizes="" />
+            </div>
+            <div class="circuit-detail__information">
+
+                <?php if( have_rows('circuit_stats', $u->ID) ): ?>
+
+                  <ul class="circuit-detail__table">
+                      <?php while( have_rows('circuit_stats', $u->ID) ): the_row();
+                          $circuitstatskey = get_sub_field('stat_type', $u->ID);
+                          $circuitstatslabel = get_sub_field('stat_value', $u->ID);
+                          ?>
+
+                        <li>
+                          <div class="circuit-detail__key"><?php echo $circuitstatskey; ?></div>
+                          <div class="circuit-detail__value"><?php echo $circuitstatslabel; ?></div>
+                        </li>
+
+                      <?php endwhile; ?>
+                  </ul>
+                <?php endif; ?>
+
+            </div>
+          </div>
         </div>
 
-      <?php endif;?>
+      </div>
+
+    </div>
+
+        <?php endforeach; ?>
+
+    <?php endif; ?>
+
+
 
   </div>
 
