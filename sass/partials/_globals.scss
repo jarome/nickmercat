@@ -324,3 +324,11 @@ a.button.large {
 		display: none;
 	}
 }
+
+.video-player-container {
+
+	padding-bottom: 0;
+	.wpb_content_element {
+		margin-bottom: 0;
+	}
+}

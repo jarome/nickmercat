@@ -3,7 +3,7 @@ $bloglayout	=	neat_get_blog_layout();
 ?>
 	<div <?php post_class();?>>
     <div class="full-width-header full-width-header__news"><h2>News</h2></div>
-		<div class="container">
+		<div class="container single-article">
 			<?php neat_yoast_breadcrumb();?>
 			<?php if( $bloglayout == 'l_sidebar' ):?><?php get_sidebar();?><?php endif;?>
 			<article class="article-column blog-teaser <?php print ($bloglayout == 'fullwidth') ? 'template-fullwidth' : '';?>">

@@ -176,6 +176,7 @@ if( !function_exists( 'neat_enqueue_scripts' ) ){
 		wp_enqueue_script('jquery.fitvids.js', NEAT_THEME_URI . '/assets/js/jquery.fitvids.js', array('jquery'), '', true);
 		wp_enqueue_script('masonry.pkgd.min.js', NEAT_THEME_URI . '/assets/js/masonry.pkgd.min.js', array('jquery'), '', true);
 		wp_enqueue_script('jquery.flexslider.js', NEAT_THEME_URI . '/assets/js/jquery.flexslider.js', array('jquery'), '', true);
+       //wp_enqueue_script('moment.min.js', NEAT_THEME_URI . '/assets/js/moment.min.js', array('jquery'), '', true);
 		wp_enqueue_script('jquery.imagesloaded.min.js', NEAT_THEME_URI . '/assets/js/jquery.imagesloaded.min.js', array('jquery'), '', true);
 		wp_enqueue_script('plugins-scroll.js', NEAT_THEME_URI . '/assets/js/plugins-scroll.js', array('jquery'), '', true);
 		//wp_enqueue_script('smooth-scroll.js', NEAT_THEME_URI . '/assets/js/smooth-scroll.js', array(), '', true);

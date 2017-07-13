@@ -47,7 +47,8 @@
 				border-bottom: 5px solid $base-accent-color;
 			}
 			@include media($small-screen-down) {
-				@include flex-basis(100%);
+				@include flex-basis(calc(50% - 20px));
+				width: calc(50% - 20px);
 			}
 			margin-bottom: 20px;
 			@include media($small-screen-up) {
@@ -64,6 +65,9 @@
 			h4 {
 				font-weight: normal;
 				margin: 0;
+				@include media($xsmall-screen-down) {
+					font-size: rem(14px);
+				}
 			}
 			.meta {
 				margin-bottom: 5px;
@@ -79,6 +83,9 @@
 					display: inline-block;
 					margin: 0.2em;
 					margin-right: 20px;
+					@include media($small-screen-down) {
+					margin-right: 0;
+				 }
 				}
 
 			}

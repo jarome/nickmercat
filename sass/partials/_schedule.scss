@@ -64,6 +64,10 @@ $schedule-carousel-padding: 15px;
 			left: auto;
 			margin: 30px auto 0 auto;
 			top: auto;
+
+			@include media($xsmall-screen-down) {
+				left: -8px;
+			}
 		}
 		.circuit-detail-container .circuit-detail__col {
 			position: relative;
@@ -85,6 +89,10 @@ $schedule-carousel-padding: 15px;
 		.circuit-detail__results {
 			@include display(inline-flex);
 			margin-top: 30px;
+			@include media($xsmall-screen-down) {
+				position: relative;
+				left: -9px;
+			}
 		}
 		.circuit-detail-container .circuit-detail__col .circuit-detail__information {
 			z-index: 2;

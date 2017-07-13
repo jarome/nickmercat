@@ -2,6 +2,9 @@
 $bloglayout	=	neat_get_blog_layout();
 ?>
 <div class="blog-single">
+
+  <div class="full-width-header full-width-header__news"><h2>News</h2></div>
+  
 	<div class="container">
 		<?php 
 		/**

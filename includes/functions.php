@@ -1139,8 +1139,8 @@ if( !function_exists( 'neat_pagination' ) ){
 			'mid_size' => 3,
 			'type'	=>	'list',
 			'add_args' => array_map( 'urlencode', $query_args ),
-			'prev_text' => __( '&larr; Prev', 'neat' ),
-			'next_text' => __( 'Next &rarr;', 'neat' ),
+			'prev_text' => __( '&larr;', 'neat' ),
+			'next_text' => __( '&rarr;', 'neat' ),
 		) );
 		
 		if ( $links ) :

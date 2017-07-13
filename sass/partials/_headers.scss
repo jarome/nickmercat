@@ -17,6 +17,7 @@
 		@include media($small-screen-down) {
 			background: url('../img/headers/meetnick-header-m.jpg') center center no-repeat;
 			background-size: cover;
+			margin-bottom: 3em;
 		}
 		background-size: cover;
 		height: 392px;

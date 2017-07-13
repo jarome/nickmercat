@@ -6,36 +6,48 @@
 	left: 50%;
 	margin-left: -135px;
 	top: -30px;
+	display: table;
 	.countdown-clock__timer {
-		display: table;
+		display: table-row;
 		margin: 0 auto;
 	}
 	.countdown-clock__labels {
 		position: relative;
 		top: -9px;
+		display: table-row;
 		.countdown-clock__label {
 			font-size: rem(10px);
 			letter-spacing: 1px;
 			line-height: 12px;
 			text-align: center;
+			display: table-cell;
 			text-transform: uppercase;
-			margin-left: 30px;
-			&:nth-child(3) {
-				margin-left: 25px;
+			position: relative;
+			top: -2px;
+			padding: 0 0 4px 0;
+			&:first-child {
+				width: 87px;
 			}
-			&:last-child {
-				margin-left: 27px;
+			&:nth-child(2) {
+				width: 59px;
 			}
 		}
 	}
 	.countdown-clock__date {
 		font-weight: bold;
-		display: inline-block;
+		display: table-cell;
 		font-family: $bebas-regular-font-stack;
 		font-size: rem(44px);
+		text-align: center;
 		line-height: rem(44px);
 		letter-spacing: 0;
 		clear: both;
-		margin: 6px 12px 0 12px;
+		padding: 7px 0 0 0;
+		&:first-child {
+			width: 87px;
+		}
+		&:nth-child(2) {
+			width: 59px;
+		}
 	}
 }

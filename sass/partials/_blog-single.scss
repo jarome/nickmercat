@@ -153,6 +153,19 @@
 	}
 }
 
+.format-image a.featured-image {
+	width: 100%;
+	padding-top: 75%;
+	position: relative;
+	overflow: hidden;
+	img {
+		position:absolute;
+		top:0;
+		bottom:0;
+		margin:auto;
+	}
+}
+
 /* author box */
 .author-box {
 	margin-bottom: 2em;
@@ -196,7 +209,8 @@
 	    text-align: center;
 
 	    li {
-	      	display: inline;
+				display: inline-block;
+				margin-bottom: 5px;
 	    }
 
 	    ul li {
@@ -217,6 +231,7 @@
 			@include transition (all 0.2s ease-in-out);
 			background: $pagination-background;
 			border-radius: $base-border-radius;
+			display: block;
 			border: none;
 			color: $pagination-color;
 			padding: .5em 1em;

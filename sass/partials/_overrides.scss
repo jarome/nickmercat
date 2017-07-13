@@ -55,3 +55,30 @@
 		}
 	}
 }
+
+//Refactor into code - for now isolating these last minute changes
+.page-template-page-fullwidth-meetnick {
+	h2 {
+		@include media($small-screen-down) {
+			font-size: 2.5rem;
+		}
+	}
+	.wpb_content_element {
+		margin-bottom: 15px;
+	}
+	@include media($small-screen-down) {
+		section + section {
+			padding-top: 3em;
+		}
+	}
+}
+
+.single-article {
+	h2 {
+		@include media($small-screen-down) {
+			font-size: 2.5rem;
+		}
+	}
+}
+
+

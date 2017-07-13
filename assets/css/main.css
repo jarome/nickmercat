@@ -1059,6 +1059,11 @@ a.button.large {
   .hide-for-desktop {
     display: none; } }
 
+.video-player-container {
+  padding-bottom: 0; }
+  .video-player-container .wpb_content_element {
+    margin-bottom: 0; }
+
 .np-about-slider .flexslider {
   border: none !important;
   box-shadow: none !important;
@@ -1101,6 +1106,21 @@ a.button.large {
   top: 131px;
   right: -100px;
   background: url("../img/arrow/arrow-right.svg") center center no-repeat; }
+
+@media screen and (max-width: 768px) {
+  .page-template-page-fullwidth-meetnick h2 {
+    font-size: 2.5rem; } }
+
+.page-template-page-fullwidth-meetnick .wpb_content_element {
+  margin-bottom: 15px; }
+
+@media screen and (max-width: 768px) {
+  .page-template-page-fullwidth-meetnick section + section {
+    padding-top: 3em; } }
+
+@media screen and (max-width: 768px) {
+  .single-article h2 {
+    font-size: 2.5rem; } }
 
 header.navigation.has-shadow {
   box-shadow: 0 6px 13px rgba(0, 0, 0, 0.3); }
@@ -1695,7 +1715,8 @@ section.blog {
       section.blog #blog-teasers .blog-item h4 {
         text-transform: uppercase;
         font-size: 1.3em;
-        padding-bottom: .5em; }
+        padding-bottom: .5em;
+        margin-bottom: 0; }
       section.blog #blog-teasers .blog-item p {
         color: gray; }
       section.blog #blog-teasers .blog-item i {
@@ -1851,6 +1872,17 @@ section.blog {
       padding-top: 1em;
       font-size: 0.8em; }
 
+.format-image a.featured-image {
+  width: 100%;
+  padding-top: 75%;
+  position: relative;
+  overflow: hidden; }
+  .format-image a.featured-image img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto; }
+
 /* author box */
 .author-box {
   margin-bottom: 2em;
@@ -1876,7 +1908,8 @@ section.blog {
     display: inline;
     text-align: center; }
     .pagination ul li {
-      display: inline; }
+      display: inline-block;
+      margin-bottom: 5px; }
     .pagination ul ul li {
       display: none; }
       .pagination ul ul li:nth-child(1), .pagination ul ul li:nth-child(2), .pagination ul ul li:nth-child(3) {
@@ -1890,6 +1923,7 @@ section.blog {
       transition: all 0.2s ease-in-out;
       background: #f7f7f7;
       border-radius: 3px;
+      display: block;
       border: none;
       color: #666666;
       padding: .5em 1em; }
@@ -2251,7 +2285,8 @@ footer.footer {
     @media screen and (max-width: 768px) {
       .full-width-header.full-width-header__meetnick {
         background: url("../img/headers/meetnick-header-m.jpg") center center no-repeat;
-        background-size: cover; } }
+        background-size: cover;
+        margin-bottom: 3em; } }
   .full-width-header.full-width-header__contact {
     background: url("../img/headers/contact-header.jpg") center center no-repeat;
     background-size: cover;
@@ -2563,10 +2598,11 @@ aside.sidebar .widget-wrapper {
       border-bottom: 5px solid #DB0000; }
     @media screen and (max-width: 768px) {
       .gallery-page .gallery-list-container .gallery-list-item {
-        -webkit-flex-basis: 100%;
-        -moz-flex-basis: 100%;
-        flex-basis: 100%;
-        -ms-flex-preferred-size: 100%; } }
+        -webkit-flex-basis: calc(50% - 20px);
+        -moz-flex-basis: calc(50% - 20px);
+        flex-basis: calc(50% - 20px);
+        -ms-flex-preferred-size: calc(50% - 20px);
+        width: calc(50% - 20px); } }
     @media screen and (min-width: 768px) {
       .gallery-page .gallery-list-container .gallery-list-item {
         -webkit-flex-basis: calc(25% - 20px);
@@ -2579,6 +2615,9 @@ aside.sidebar .widget-wrapper {
     .gallery-page .gallery-list-container .gallery-list-item__teaser h4 {
       font-weight: normal;
       margin: 0; }
+      @media screen and (max-width: 768px) {
+        .gallery-page .gallery-list-container .gallery-list-item__teaser h4 {
+          font-size: 0.875rem; } }
     .gallery-page .gallery-list-container .gallery-list-item__teaser .meta {
       margin-bottom: 5px;
       color: #DB0000;
@@ -2592,6 +2631,9 @@ aside.sidebar .widget-wrapper {
         display: inline-block;
         margin: 0.2em;
         margin-right: 20px; }
+        @media screen and (max-width: 768px) {
+          .gallery-page .gallery-list-container .gallery-list-item__teaser .meta span {
+            margin-right: 0; } }
 
 .schedule-information-section {
   padding-top: 0; }
@@ -2647,6 +2689,9 @@ aside.sidebar .widget-wrapper {
       left: auto;
       margin: 30px auto 0 auto;
       top: auto; }
+      @media screen and (max-width: 380px) {
+        .circuit-detail.circuit-detail-homepage .countdown-clock {
+          left: -8px; } }
     .circuit-detail.circuit-detail-homepage .circuit-detail-container .circuit-detail__col {
       position: relative;
       margin-bottom: 0;
@@ -2670,6 +2715,10 @@ aside.sidebar .widget-wrapper {
       display: -ms-inline-flexbox;
       display: inline-flex;
       margin-top: 30px; }
+      @media screen and (max-width: 380px) {
+        .circuit-detail.circuit-detail-homepage .circuit-detail__results {
+          position: relative;
+          left: -9px; } }
     .circuit-detail.circuit-detail-homepage .circuit-detail-container .circuit-detail__col .circuit-detail__information {
       z-index: 2;
       position: relative;
@@ -2896,33 +2945,43 @@ aside.sidebar .widget-wrapper {
   position: absolute;
   left: 50%;
   margin-left: -135px;
-  top: -30px; }
+  top: -30px;
+  display: table; }
   .countdown-clock .countdown-clock__timer {
-    display: table;
+    display: table-row;
     margin: 0 auto; }
   .countdown-clock .countdown-clock__labels {
     position: relative;
-    top: -9px; }
+    top: -9px;
+    display: table-row; }
     .countdown-clock .countdown-clock__labels .countdown-clock__label {
       font-size: 0.625rem;
       letter-spacing: 1px;
       line-height: 12px;
       text-align: center;
+      display: table-cell;
       text-transform: uppercase;
-      margin-left: 30px; }
-      .countdown-clock .countdown-clock__labels .countdown-clock__label:nth-child(3) {
-        margin-left: 25px; }
-      .countdown-clock .countdown-clock__labels .countdown-clock__label:last-child {
-        margin-left: 27px; }
+      position: relative;
+      top: -2px;
+      padding: 0 0 4px 0; }
+      .countdown-clock .countdown-clock__labels .countdown-clock__label:first-child {
+        width: 87px; }
+      .countdown-clock .countdown-clock__labels .countdown-clock__label:nth-child(2) {
+        width: 59px; }
   .countdown-clock .countdown-clock__date {
     font-weight: bold;
-    display: inline-block;
+    display: table-cell;
     font-family: "Bebas Regular", "Impact", sans-serif;
     font-size: 2.75rem;
+    text-align: center;
     line-height: 2.75rem;
     letter-spacing: 0;
     clear: both;
-    margin: 6px 12px 0 12px; }
+    padding: 7px 0 0 0; }
+    .countdown-clock .countdown-clock__date:first-child {
+      width: 87px; }
+    .countdown-clock .countdown-clock__date:nth-child(2) {
+      width: 59px; }
 
 /* ====================
 14. USER CUSTOMISATION 

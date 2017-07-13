@@ -13,13 +13,15 @@ $bloglayout	=	neat_get_blog_layout();
 
 		<?php if( $bloglayout == 'l_sidebar' ):?><?php get_sidebar();?><?php endif;?>
 		<div class="main-column" id="content">
-			<?php 
+			<?php
 				// get the post.
 				global $more;
+      $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 				$more = 0;
 				$args	=	array(
 					'post_type'		=>	'post',
-					'post_status'	=>	'publish'
+					'post_status'	=>	'publish',
+            'paged'          => $paged
 				);
 				query_posts( apply_filters( 'neat_blogpage_args' , $args) );
 				if( have_posts() ):
@@ -32,13 +34,13 @@ $bloglayout	=	neat_get_blog_layout();
 					get_template_part( 'content', 'none' );
 				endif;
 			?>
-			<?php 
+			<?php
 			/**
 			 * neat_pagination action.
 			 * hooked neat_pagination, 10
 			 */
 			do_action( 'neat_pagination' );
-			?>		 
+			?>
 		</div>
 		<?php if( $bloglayout == 'r_sidebar' ):?><?php get_sidebar();?><?php endif;?>
 	</div>
