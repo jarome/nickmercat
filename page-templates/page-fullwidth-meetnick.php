@@ -42,7 +42,7 @@
             Nick<span class="dual-size__large">Percat</span>
           </h2>
 
-          <p>COATES HIRE AMBASSADOR <span class="accent">SUPERCARS DRIVER</span></p>
+          <p>COATES HIRE AMBASSADOR <br/><span class="accent">SUPERCARS DRIVER</span></p>
 
           <ul class="career-stats__table">
             <li>
