@@ -5,12 +5,18 @@
   "main": "index.js",
   "dependencies": {
     "bourbon": "^4.3.4",
+    "bourbon-bitters": "^1.2.1",
     "gulp": "^3.9.1",
-    "neat": "^1.2.2"
+    "neat": "^1.2.2",
+    "node-bourbon": "^4.2.8",
+    "node-neat": "^2.0.0-beta.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

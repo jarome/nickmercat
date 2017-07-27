@@ -167,21 +167,8 @@ if( !function_exists( 'neat_enqueue_scripts' ) ){
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-		// Load the JS
-		wp_enqueue_script('jquery.mb.YTPlayer.js', NEAT_THEME_URI . '/assets/js/jquery.mb.YTPlayer.js', array('jquery'), '', false);
-		wp_enqueue_script('jquery.stellar.min.js', NEAT_THEME_URI . '/assets/js/jquery.stellar.min.js', array('jquery'), '', true);
-		wp_enqueue_script('headroom.min.js', NEAT_THEME_URI . '/assets/js/headroom.min.js', array('jquery'), '', true);
-		wp_enqueue_script('jquery.headroom.js', NEAT_THEME_URI . '/assets/js/jquery.headroom.js', array('jquery'), '', true);
-		wp_enqueue_script('owl.carousel.js', NEAT_THEME_URI . '/assets/js/owl.carousel.js', array('jquery'), '', true);
-		wp_enqueue_script('jquery.fitvids.js', NEAT_THEME_URI . '/assets/js/jquery.fitvids.js', array('jquery'), '', true);
-		wp_enqueue_script('masonry.pkgd.min.js', NEAT_THEME_URI . '/assets/js/masonry.pkgd.min.js', array('jquery'), '', true);
-		wp_enqueue_script('jquery.flexslider.js', NEAT_THEME_URI . '/assets/js/jquery.flexslider.js', array('jquery'), '', true);
-       //wp_enqueue_script('moment.min.js', NEAT_THEME_URI . '/assets/js/moment.min.js', array('jquery'), '', true);
-		wp_enqueue_script('jquery.imagesloaded.min.js', NEAT_THEME_URI . '/assets/js/jquery.imagesloaded.min.js', array('jquery'), '', true);
-		wp_enqueue_script('plugins-scroll.js', NEAT_THEME_URI . '/assets/js/plugins-scroll.js', array('jquery'), '', true);
-		//wp_enqueue_script('smooth-scroll.js', NEAT_THEME_URI . '/assets/js/smooth-scroll.js', array(), '', true);
-		wp_enqueue_script('waypoint.min.js', NEAT_THEME_URI . '/assets/js/waypoint.min.js', array('jquery'), '', true);
-		wp_enqueue_script('scripts.js', NEAT_THEME_URI . '/assets/js/scripts.js', array('jquery'), '', true);
+		// Load the JSfalse);
+		wp_enqueue_script('scripts.js', NEAT_THEME_URI . '/assets/js/min/scripts.min.js', array('jquery'), '', true);
 		wp_enqueue_script('custom.js', NEAT_THEME_URI . '/assets/js/custom.js', array('jquery'), '', true);
 		
 		wp_localize_script( 'custom.js' , 'jsvars', apply_filters( 'jsvars' , array(
