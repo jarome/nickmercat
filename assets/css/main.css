@@ -821,7 +821,7 @@ strong {
 h2 {
   font-family: "Bebas Regular", "Impact", sans-serif;
   font-size: 3.75rem;
-  font-weight: 900; }
+  text-transform: uppercase; }
 
 h2.dual-size {
   font-size: 1.125rem;

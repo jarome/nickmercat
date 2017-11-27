@@ -8,7 +8,6 @@ a:focus {
 	outline: none;
 }
 
-
 body {
 	font-family: 'Montserrat', sans-serif;
 	color: $base-primary-color;
@@ -29,7 +28,8 @@ strong {
 h2 {
 	font-family: $bebas-regular-font-stack;
 	font-size: rem(60px);
-	font-weight: 900;
+	//font-weight: 900;
+	text-transform: uppercase;
 }
 
 
