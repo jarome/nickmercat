@@ -207,12 +207,6 @@
           <a href="https://www.timken.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/timken.png" width="177" alt=""></a>
         </li>
         <li>
-          <a href="https://www.morrisfinance.com.au/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/morris-finance.png" width="187" alt=""></a>
-        </li>
-        <li>
-          <a href="https://www.bodi.com.au/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/bodi.png" width="137" alt="" style="margin-bottom: 25px; margin-left: 20px; margin-right: 20px;"></a>
-        </li>
-        <li>
           <a href="http://www.araihelmets.net.au/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/arai.png" width="187" alt=""></a>
         </li>
         <li>
