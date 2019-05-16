@@ -72,7 +72,10 @@ $bloglayout	=	neat_get_blog_layout();
                 <?php $loop_counter++; ?>
               <?php endforeach; ?>
 
+            <?php else: ?>
+                <h1>No upcoming events accounced. Please stay tuned.</h1>
             <?php endif; ?>
+
 
           </div>
         </div>

@@ -233,6 +233,14 @@ $bloglayout	=	neat_get_blog_layout();
 
         <?php endforeach; ?>
 
+    <?php else: ?>
+      <div class="schedule-page-hero">
+        <div class="container">
+          <h2 style="margin-bottom: 0;">No upcoming events announced.</h2>
+          <h3 style="margin-bottom: 50px;">Please stay tuned.</h3>
+        </div>
+      </div>
+
     <?php endif; ?>
 
 

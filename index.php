@@ -22,7 +22,7 @@ $bloglayout	=	neat_get_blog_layout();
 					/**
 					 * neat_pagination action.
 					 * hooked neat_pagination, 10
-					 */
+				git push	 */
 					do_action( 'neat_pagination' );
 				else:
 					// nothing found.

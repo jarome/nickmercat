@@ -170,9 +170,21 @@
 
                 <?php endforeach; ?>
 
+              <?php else: ?>
+
+              <div class="circuit-detail__information">
+
+                <h2 class="dual-size">
+                  Next<span class="dual-size__large">Race</span>
+                </h2>
+
+                <h4>No upcoming races announced.</h4>
+
+              </div>
+
               <?php endif; ?>
-              
-            </div>
+
+
           </div>
 
         </div>
@@ -189,20 +201,24 @@
       <h2>Partners</h2>
       <ul class="partners__partner-list">
         <li>
-          <a href="http://www.luckydesign.it/en/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/luckydesign.png" width="185" alt=""></a>
-        </li>
-        <li>
           <a href="https://www.coateshire.com.au/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/coatshire.png" width="171" alt=""></a>
-        </li>
-        <li>
-          <a href="https://www.morrisfinance.com.au/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/morris-finance.png" width="187" alt=""></a>
         </li>
         <li>
           <a href="https://www.timken.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/timken.png" width="177" alt=""></a>
         </li>
         <li>
+          <a href="https://www.morrisfinance.com.au/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/morris-finance.png" width="187" alt=""></a>
+        </li>
+        <li>
+          <a href="https://www.bodi.com.au/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/bodi.png" width="137" alt="" style="margin-bottom: 25px; margin-left: 20px; margin-right: 20px;"></a>
+        </li>
+        <li>
           <a href="http://www.araihelmets.net.au/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/arai.png" width="187" alt=""></a>
         </li>
+        <li>
+          <a href="http://www.luckydesign.it/en/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/luckydesign.png" width="185" alt=""></a>
+        </li>
+
       </ul>
     </section>
 		<footer class="footer">
