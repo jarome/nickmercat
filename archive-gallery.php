@@ -71,10 +71,36 @@ $bloglayout	=	neat_get_blog_layout();
                   ?>
 
                   <div class="gallery-list-item">
-                      <?php $image = get_field('gallery_thumbnail'); ?>
-                    <div class="gallery-list-item__thumb">
-                      <a href="<?php the_permalink();?>"><img src="<?php echo $image['url']; ?>" /></a>
-                    </div>
+
+                      <?php
+
+                      $image = get_field('gallery_thumbnail');
+
+                      if( !empty($image) ):
+
+                          // vars
+                          $url = $image['url'];
+                          $title = $image['title'];
+                          $alt = $image['alt'];
+
+                          // thumbnail
+                          $size = 'medium';
+                          $thumb = $image['sizes'][ $size ];
+                          $width = $image['sizes'][ $size . '-width' ];
+                          $height = $image['sizes'][ $size . '-height' ];
+
+                          ?>
+
+                          <div class="gallery-list-item__thumb">
+
+                              <a href="<?php the_permalink();?>" title="<?php echo $title; ?>">
+
+                                  <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+
+                              </a>
+                          </div>
+
+                      <?php endif; ?>
 
                     <div class="gallery-list-item__teaser">
                       <div class="meta">
